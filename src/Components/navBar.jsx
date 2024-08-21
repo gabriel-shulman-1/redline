@@ -1,9 +1,9 @@
 import logo from "../assets/REDLINE PNG TRANSP 05.png"
-//import wpsLogo from "../assets/wps.png"
+import wpsLogo from "../assets/wps.png"
 import instaLogo from "../assets/Instagram.png"
 import { NavLink } from "react-router-dom"
+import { WhatsAppLink } from "./wps"
 export const NavBar = () => {
-    //<a><img src={wpsLogo} alt="WhatsApp" width="30"/></a>
     return(
         <header>
         <div className="top-bar">
@@ -13,6 +13,7 @@ export const NavBar = () => {
                 </NavLink>
             </div>
             <div className="social-icons">
+                <WhatsAppLink phoneNumber="+5401155238433" message="hola, me interesa sus servicios"/>
                 <a href="https://www.instagram.com/redlinenetsrl?igsh=bnR0bDhyNWp0MzB0" target="_blank" rel="noreferrer"><img src={instaLogo} alt="Instagram" width="30"/></a>
             </div>
         </div>

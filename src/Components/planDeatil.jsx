@@ -2,9 +2,9 @@ import planesData from "../data/info.json";
 import React, { useContext, useState, useEffect } from "react";
 import { planChose } from "../context/cnt1";
 export const PlanDetail = () => {
+  const { plan, setPlan } = useContext(planChose);
   //const [information, setInformation] = useState(null);
   //const infoplan = localStorage.getItem("number");
-  const { plan, setPlan } = useContext(planChose);
   /*
   const [number, setNumber] = useState(() => {
     const savedNumber = localStorage.getItem('number');
@@ -13,6 +13,7 @@ export const PlanDetail = () => {
   const tittle = planesData.plan[plan].id;
   const description = planesData.description[plan];
   setInformation([tittle, description]);*/
+
   const planMain = {
     display: "flex",
     flexDirection: "row",
@@ -23,7 +24,6 @@ export const PlanDetail = () => {
     alignItems: "center",
     padding: "2rem",
     height: "660px"
-    
   };
   console.log(plan);
   const ShowData = (id) => {
@@ -38,18 +38,15 @@ export const PlanDetail = () => {
     );
   };
 
-
-  
-
   return (
     <main style={planMain}>
-      <button id="izq">&#10094;</button>
+      <button className="slider">&#10094;</button>
       <div className="descriptionContainer">
         <div className="txDescription">
           {ShowData(plan)}
         </div>
       </div>
-      <button id="der">&#10095;</button>
+      <button className="slider">&#10095;</button>
     </main>
   );
 };

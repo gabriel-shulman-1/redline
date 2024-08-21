@@ -1,7 +1,7 @@
 import logo1 from "../assets/REDLINE PNG BN 09.png"
 export const Services = () =>{
     return (
-        <main >
+        <main id="services">
         <h2 className="rubik-h2">Nuestros servicios</h2>
         <div className="ntdiv">
             <div className="tx">

@@ -170,7 +170,7 @@ main .rubik-h2 {
   font-weight: bold;
   border-radius: 10px;
   box-shadow: 0px 0px 18px 6px rgba(255, 255, 255, 0.747);
-  transition: box-shadow 1s;
+  transition: all 1s;
 }
 
 .plan1:hover {
@@ -211,20 +211,42 @@ main #planes .link .plan .planH3 {
 /*plandetail*/
 
 .descriptionContainer {
+  width: 70%;
+  height: 60%;
+  margin: 20px auto;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   border-radius: 10px;
+  box-shadow: 0px 0px 18px 6px rgba(255, 255, 255, 0.747);
 }
 
 .txDescription {
+  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   color: white;
   width: 45%;
+}
+
+.slider {
+  height: 50%;
+  margin: auto;
+  background-color: #818181;
+  border-radius: 10px;
+  box-shadow: 0px 0px 8px 3px rgba(255, 255, 255, 0.747);
+  border-style: none;
+  transition: all 1s;
+}
+
+.slider:hover{
+  background-color: #50c1d4;
+  box-shadow: 0px 0px 18px 6px rgba(255, 255, 255, 0.747);
+  border-style: none;
 }
 
 /*footer*/
@@ -256,6 +278,139 @@ footer .divFooter li .rubik-p {
   margin: 0.5rem;
   font-size: medium;
   color: white;
+}
+
+/*services*/
+
+#services {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: static;
+  background-image: linear-gradient(
+    to center,
+    #2c2c2c 0%,
+    black 100%,
+    #505050 0%
+  );
+}
+
+#services .ntdiv {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
+  box-shadow: 0px 0px 18px 6px rgba(255, 255, 255, 0.747);
+}
+
+#services .ntdiv .tx {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 50%;
+  margin: 20px;
+}
+
+#services .ntdiv .phCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#services .ntdiv .phCont .ph {
+  height: 300px;
+}
+
+/*contact*/
+
+#contact-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.contact-info {
+  margin: 50px 0 50px 0;
+  width: 60%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
+  box-shadow: 0px 0px 18px 6px rgba(255, 255, 255, 0.747);
+}
+
+.map-container {
+  margin: 50px 0 50px 0;
+  width: 60%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
+  box-shadow: 0px 0px 18px 6px rgba(255, 255, 255, 0.747);
+}
+
+.map-container iframe{
+  padding: 3rem 0 3rem 0;
+}
+
+.info-item {
+  flex: 1 1 30%;
+  margin: 10px;
+  text-align: center;
+}
+
+.info-item h2 {
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.info-item p,
+.info-item a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.info-item a:hover {
+  text-decoration: underline;
+}
+
+.social-links a {
+  display: block;
+  margin: 5px 0;
+  color: #555;
+}
+
+.social-links a:hover {
+  color: #007bff;
+}
+
+.map-container h2 {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+iframe {
+  border-radius: 10px;
 }
 
 /*# sourceMappingURL=index.css.map */
