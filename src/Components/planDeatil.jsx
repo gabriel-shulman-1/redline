@@ -21,35 +21,32 @@ export const PlanDetail = () => {
       "linear-gradient(to right, #2c2c2c 0%, black 100%, #505050 0%)",
     justifyContent: "space-around",
     alignItems: "center",
+    padding: "2rem",
+    height: "660px"
+    
   };
   console.log(plan);
   const ShowData = (id) => {
-    let tx, h3;
-    for (let index = 0; index < planesData.plan.length; index++) {
-      if (index === plan) {
-        planesData.plan[id] = tx;
-      }
-    }
-    for (let index = 0; index < planesData.description.length; index++) {
-      if (index === plan) {
-        h3 = planesData.description[id];
-      }
-    }
+    let tx = planesData.plan[id].id
+    let h3 = planesData.description[id].id
+    console.log(tx,h3)
     return (
       <>
-        <h3>tx</h3>
-        <p>h3</p>
+        <h3>{tx}</h3>
+        <p>{h3}</p>
       </>
     );
   };
-  console.log(ShowData(plan)[0]);
+
+
+  
 
   return (
     <main style={planMain}>
       <button id="izq">&#10094;</button>
       <div className="descriptionContainer">
         <div className="txDescription">
-          <ShowData/>
+          {ShowData(plan)}
         </div>
       </div>
       <button id="der">&#10095;</button>
