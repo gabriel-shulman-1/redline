@@ -7,6 +7,7 @@ body {
 }
 header {
   height: 280px;
+  margin-bottom: 3rem;
 }
 header .top-bar {
   display: flex;
@@ -124,90 +125,6 @@ header .nav-bar .nav-btn:hover:after {
   transition: 800ms ease all;
 }
 
-/*main*/
-
-main {
-  display: flex;
-  flex-direction: column;
-  position: static;
-  background-image: linear-gradient(
-    to right,
-    #2c2c2c 0%,
-    black 100%,
-    #505050 0%
-  );
-}
-main .rubik-h2 {
-  font-family: "Rubik", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
-  margin: 2rem;
-  color: white;
-  font-size: xxx-large;
-}
-
-#planes {
-  display: flex;
-  flex-direction: row;
-  gap: 9rem;
-  margin: 3rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.plan {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  width: 300px;
-  height: 400px;
-  background-color: rgb(117, 117, 117);
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
-  font-weight: bold;
-  border-radius: 10px;
-  box-shadow: 0px 0px 18px 6px rgba(255, 255, 255, 0.747);
-  transition: all 1s;
-}
-
-.plan1:hover {
-  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
-  box-shadow: 0px 0px 18px 6px rgba(37, 113, 255, 0.747);
-}
-.plan2:hover {
-  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
-  box-shadow: 0px 0px 18px 6px rgba(84, 212, 255, 0.747);
-}
-.plan3:hover {
-  background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);
-  box-shadow: 0px 0px 18px 6px rgba(221, 255, 30, 0.747);
-}
-.plan4:hover {
-  background-image: linear-gradient(to right, #434343 0%, black 100%);
-  color: white;
-  box-shadow: 0px 0px 18px 6px rgba(255, 23, 23, 0.747);
-}
-
-main #planes .link {
-  text-decoration: none;
-}
-
-main #planes .link .plan .planH3 {
-  text-align: center;
-  font-family: "Rubik", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
-  margin: 1rem;
-  color: white;
-  font-size: larger;
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-}
-
 /*plandetail*/
 
 .descriptionContainer {
@@ -243,7 +160,7 @@ main #planes .link .plan .planH3 {
   transition: all 1s;
 }
 
-.slider:hover{
+.slider:hover {
   background-color: #50c1d4;
   box-shadow: 0px 0px 18px 6px rgba(255, 255, 255, 0.747);
   border-style: none;
@@ -255,7 +172,7 @@ footer {
   flex-direction: row;
   justify-content: space-around;
   background-color: #555555;
-  padding-top: 1rem;
+  padding: 2rem 0 2rem 0;
 }
 footer .divFooter .rubik-h3 {
   text-align: center;
@@ -282,67 +199,17 @@ footer .divFooter li .rubik-p {
 
 /*services*/
 
-#services {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  position: static;
-  background-image: linear-gradient(
-    to center,
-    #2c2c2c 0%,
-    black 100%,
-    #505050 0%
-  );
-}
 
-#services .ntdiv {
-  max-width: 1200px;
-  margin: 50px auto;
-  padding: 20px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  border-radius: 10px;
-  box-shadow: 0px 0px 18px 6px rgba(255, 255, 255, 0.747);
-}
 
-#services .ntdiv .tx {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  width: 50%;
-  margin: 20px;
-}
+/*prices*/
 
-#services .ntdiv .phCont {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#services .ntdiv .phCont .ph {
-  height: 300px;
-}
-
-/*contact*/
-
-#contact-container {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
-
-h1 {
+#mainPrices .inter-h1 {
   text-align: center;
-  color: #333;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
 }
 
 .contact-info {
@@ -355,22 +222,6 @@ h1 {
   justify-content: space-around;
   border-radius: 10px;
   box-shadow: 0px 0px 18px 6px rgba(255, 255, 255, 0.747);
-}
-
-.map-container {
-  margin: 50px 0 50px 0;
-  width: 60%;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  border-radius: 10px;
-  box-shadow: 0px 0px 18px 6px rgba(255, 255, 255, 0.747);
-}
-
-.map-container iframe{
-  padding: 3rem 0 3rem 0;
 }
 
 .info-item {
@@ -404,6 +255,41 @@ h1 {
   color: #007bff;
 }
 
+/*prices*/
+
+.map {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.pricesDiv {
+  position: relative;
+  margin: 50px auto 50px auto;
+  padding: 4rem;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
+  box-shadow: 0px 0px 18px 6px rgba(255, 255, 255, 0.747);
+}
+
+.map-container {
+  width: 100%;
+  text-align: center;
+}
+
+.map-container .coordinateP {
+  color: white;
+}
+
+.map-container iframe {
+  padding: 3rem 0 3rem 0;
+}
+
 .map-container h2 {
   margin-bottom: 10px;
   color: #555;
@@ -413,4 +299,4 @@ iframe {
   border-radius: 10px;
 }
 
-/*# sourceMappingURL=index.css.map */
+/*fuentes*/

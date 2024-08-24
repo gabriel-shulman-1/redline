@@ -1,5 +1,5 @@
+
 import logo from "../assets/REDLINE PNG TRANSP 05.png"
-import wpsLogo from "../assets/wps.png"
 import instaLogo from "../assets/Instagram.png"
 import { NavLink } from "react-router-dom"
 import { WhatsAppLink } from "./wps"
