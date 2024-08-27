@@ -36,6 +36,7 @@ export const MapPicker = ({ initialPosition = [-34.6076, -58.9529], zoomLevel = 
     if (onLocationSelect) {
       onLocationSelect(position);
     }
+    return selectedPosition
   };
 
   return (
