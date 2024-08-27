@@ -1,6 +1,6 @@
 import planesData from "../data/info.json";
 import { useNavigate } from "react-router-dom";
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import { planChose } from "../context/cnt1";
 import "../styles/main.css";
 import i1 from "../assets/casaMain.png";
@@ -60,8 +60,7 @@ export const HomeMain = () => {
                 goToServices(hoveredIndex);
               }}
             >
-              <h3 
-              className="planH3" key={"h" + index}>
+              <h3 className="planH3" key={"h" + index}>
                 {plan.id}
               </h3>
               

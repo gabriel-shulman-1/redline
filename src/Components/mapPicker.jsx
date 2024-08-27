@@ -40,7 +40,7 @@ export const MapPicker = ({ initialPosition = [-34.6076, -58.9529], zoomLevel = 
 
   return (
     <div className='map-container'>
-      <MapContainer center={initialPosition} zoom={zoomLevel} style={{ height: '500px', width: '100%' }}>
+      <MapContainer center={initialPosition} zoom={zoomLevel} style={{ height: '500px', width: '700px' }}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

@@ -1,3 +1,5 @@
+/*todo*/
+
 html,
 body {
   margin: 0;
@@ -32,6 +34,8 @@ header .top-bar .social-icons {
   align-items: center;
   gap: 1.5rem;
 }
+
+/*iconos del header*/
 header .top-bar .social-icons a {
   transition: 1s;
   padding: 0.2rem;
@@ -51,78 +55,6 @@ header .top-bar .social-icons a:nth-child(2):hover img {
   -webkit-box-shadow: 0px 0px 18px 6px rgba(229, 0, 250, 0.82);
   -moz-box-shadow: 0px 0px 18px 6px rgba(229, 0, 250, 0.82);
   box-shadow: 0px 0px 18px 6px rgba(229, 0, 250, 0.82);
-}
-header .nav-bar {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 2rem;
-  background-color: #4b4b4b;
-}
-header .nav-bar .nav-btn {
-  background: rgb(80, 193, 212);
-  color: #fff;
-  border: none;
-  position: relative;
-  height: 40px;
-  font-size: 1em;
-  width: 14rem;
-  padding: 0 2em;
-  cursor: pointer;
-  transition: 800ms ease all;
-  outline: none;
-}
-
-header .nav-bar .nav-btn a {
-  text-decoration: none;
-}
-
-header .nav-bar .nav-btn .rubik-p {
-  color: rgb(255, 255, 255);
-  font-family: "Rubik", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-  margin: 0.5rem;
-  font-size: medium;
-}
-header .nav-bar .nav-btn .link {
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-}
-header .nav-bar .nav-btn:hover {
-  background: #fff;
-}
-header .nav-bar .nav-btn:hover .link .rubik-p {
-  color: rgb(0, 0, 0);
-}
-header .nav-bar .nav-btn:before,
-header .nav-bar .nav-btn:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 2px;
-  width: 0;
-  background: #1aab8a;
-  transition: 400ms ease all;
-}
-header .nav-bar .nav-btn:before .link,
-header .nav-bar .nav-btn:after .link {
-  color: rgb(255, 255, 255);
-}
-header .nav-bar .nav-btn:after {
-  right: inherit;
-  top: inherit;
-  left: 0;
-  bottom: 0;
-}
-header .nav-bar .nav-btn:hover:before,
-header .nav-bar .nav-btn:hover:after {
-  width: 100%;
-  transition: 800ms ease all;
 }
 
 /*plandetail*/
@@ -173,37 +105,42 @@ footer {
   justify-content: space-around;
   background-color: #555555;
   padding: 2rem 0 2rem 0;
+  color: white;
 }
-footer .divFooter .rubik-h3 {
+
+footer .divFooter li {
+  list-style: none;
+}
+
+/*fonts*/
+
+.rubik-p6 {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: medium;
+}
+.rubik-p5 {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: medium;
+  margin: 0.5rem;
+}
+
+.rubik-h3 {
   text-align: center;
   font-family: "Rubik", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
   margin: 1rem;
-  color: white;
   font-size: larger;
 }
-footer .divFooter li {
-  list-style: none;
-}
-footer .divFooter li .rubik-p {
-  font-family: "Rubik", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
-  margin: 0.5rem;
-  font-size: medium;
-  color: white;
-}
 
-/*services*/
-
-
-
-/*prices*/
-
-#mainPrices .inter-h1 {
+.inter-h1 {
   text-align: center;
   color: white;
   font-family: "Inter", sans-serif;
@@ -212,91 +149,21 @@ footer .divFooter li .rubik-p {
   font-style: normal;
 }
 
-.contact-info {
-  margin: 50px 0 50px 0;
-  width: 60%;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  border-radius: 10px;
-  box-shadow: 0px 0px 18px 6px rgba(255, 255, 255, 0.747);
-}
-
-.info-item {
-  flex: 1 1 30%;
-  margin: 10px;
-  text-align: center;
-}
-
-.info-item h2 {
-  color: #555;
-  margin-bottom: 10px;
-}
-
-.info-item p,
-.info-item a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.info-item a:hover {
-  text-decoration: underline;
-}
-
-.social-links a {
-  display: block;
-  margin: 5px 0;
-  color: #555;
-}
-
-.social-links a:hover {
-  color: #007bff;
-}
-
-/*prices*/
-
-.map {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.pricesDiv {
-  position: relative;
-  margin: 50px auto 50px auto;
-  padding: 4rem;
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  border-radius: 10px;
-  box-shadow: 0px 0px 18px 6px rgba(255, 255, 255, 0.747);
-}
-
-.map-container {
-  width: 100%;
-  text-align: center;
-}
-
-.map-container .coordinateP {
+.rubik-h1 {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  margin: 2rem;
   color: white;
+  font-size: xxx-large;
 }
 
-.map-container iframe {
-  padding: 3rem 0 3rem 0;
+.rubik-h2 {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  margin: 2rem;
+  color: white;
+  font-size: xx-large;
 }
-
-.map-container h2 {
-  margin-bottom: 10px;
-  color: #555;
-}
-
-iframe {
-  border-radius: 10px;
-}
-
-/*fuentes*/

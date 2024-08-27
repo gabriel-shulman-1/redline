@@ -22,13 +22,12 @@ export const Services = () =>{
             </div>
             <div className="phCont">
                 <img className="ph" src={logo1} alt=""/>
-            </div> 
+            </div>
         </div>
         
         <div className="ntdiv">
             <div className="tx">
                 <h3 className="rubik-h3">Hogares, Home Office, entretenimiento y vigilancia</h3>
-            
                 <p className="rubik-p">Nuestros planes de internet para hogares están diseñados para ofrecer la mejor conectividad a cada miembro de la familia. Sabemos que hoy en día, una conexión rápida y confiable es esencial para el día a día, ya sea para trabajar desde casa, estudiar en línea, o disfrutar de entretenimiento digital. Ofrecemos una variedad de planes que se adaptan a diferentes necesidades, desde velocidades ideales para usuarios ocasionales hasta opciones más avanzadas para quienes requieren un rendimiento superior. Con nuestra tecnología de vanguardia, puedes estar seguro de que todos en tu hogar podrán disfrutar de una experiencia en línea sin interrupciones, con la capacidad de conectar múltiples dispositivos simultáneamente sin comprometer la velocidad.</p>
                 <p className="rubik-p">Además de la velocidad, nuestros planes de internet para hogares incluyen soporte técnico especializado y herramientas de seguridad para proteger tu red. Ya sea que necesites un plan básico para navegar por la web y usar redes sociales, o un plan avanzado para streaming en alta definición y gaming en línea, tenemos la solución perfecta para ti. Nos comprometemos a brindar un servicio que no solo cumpla con tus expectativas, sino que también se anticipe a tus necesidades futuras, ofreciéndote flexibilidad y fiabilidad en cada conexión. Con nuestros planes, tu hogar estará siempre conectado, listo para enfrentar los desafíos de la vida digital moderna.</p>
             </div>

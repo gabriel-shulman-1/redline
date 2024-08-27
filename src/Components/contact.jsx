@@ -7,6 +7,7 @@ export const Contact = () => {
       <h1 className="rubik-h1">Contacto</h1>
 
       <div className="contact-info">
+        
         <div className="info-item">
           <h2 className="rubik-h2">Teléfono</h2>
           <p>

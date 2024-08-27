@@ -40,43 +40,50 @@ export const Prices = () => {
 
   return (
     <main id="mainPrices">
-      <h1 className=".inter-h1">Seleccione su direccíon en el mapa</h1>
+      
+      <h1 className="rubik-h1">Seleccione su direccíon en el mapa</h1>
 
       <div className="pricesDiv">
         <MapPicker onLocationSelect={handleLocationSelect} />
       </div>
 
       <div className="pricesDiv">
-        <label className="priceLabel">Enviar solicitud por: </label>
+        <label className="priceLabel">
+          <p className="rubik-p5">Enviar solicitud por: </p>
+        </label>
         <select
           value={method}
           onChange={(e) => (setMethod(e.target.value), setTipo(e.target.value))}
           className="slider-container"
         >
           <option value="whatsapp" id="wps">
-            WhatsApp
+            <p className="rubik-p5">WhatsApp</p>
           </option>
           <option value="email" id="email">
-            Email
+            <p className="rubik-p5">Email</p>
           </option>
         </select>
       </div>
 
       <div className="pricesDiv">
-        <label className="priceLabel">
-          {tipo[0].toLocaleUpperCase() + tipo.substring(1)}
+        <label>
+          <p className="rubik-p5">
+            {tipo[0].toLocaleUpperCase() + tipo.substring(1)}
+          </p>
         </label>
         <input
           type="text"
           value={recipient}
           onChange={(e) => setRecipient(e.target.value)}
           placeholder={tipo === msgEmpty ? "" : "Introduzca su " + tipo}
-          className="priceInputHolder"
+          className="slider-container"
         />
       </div>
 
       <div className="pricesDiv">
-        <label className="priceLabel">Mensaje: </label>
+        <label>
+          <p className="rubik-p5">Mensaje:</p>
+        </label>
         <textarea
           value={message}
           onChange={(e) => setMessage(e.target.value)}
@@ -85,7 +92,7 @@ export const Prices = () => {
             width: "80%",
             height: "10em",
           }}
-          className="priceInputHolder"
+          className="slider-container"
         />
       </div>
 
@@ -98,8 +105,8 @@ export const Prices = () => {
           }}
         >
           {data.plan.map((option) => (
-            <div key={option.id} style={{ margin: "2rem" }}>
-              <p>{option.id}</p>
+            <div key={option.id}>
+              <p className="rubik-p5">{option.id}</p>
               <input
                 type="checkbox"
                 className={"checkBox " + option.id}
