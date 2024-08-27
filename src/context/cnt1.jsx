@@ -7,8 +7,6 @@ export const PlanProvider = ({ children }) => {
         localStorage.setItem('number', JSON.stringify(n))
     }
     m1(plan)
-    console.log(localStorage.getItem('number'))
-    console.log(sessionStorage.getItem('number'))
     return(
         <planChose.Provider value={{plan, setPlan}}>
             {children}
