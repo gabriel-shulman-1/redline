@@ -1,5 +1,4 @@
 import "../styles/contact.css"
-import instaLogo from "../assets/Instagram.png";
 export const Contact = () => {
   return (
     <main id="contact-container">

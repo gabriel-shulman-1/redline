@@ -1,15 +1,11 @@
 import planesData from "../data/info.json";
-import { useNavigate } from "react-router-dom";
-import React, { useContext, useState } from "react";
-import { planChose } from "../context/cnt1";
+//import { useNavigate } from "react-router-dom";
+//import React, { useContext, useState } from "react";
 import { Card } from "./card";
 import "../styles/main.css";
 
 export const HomeMain = () => {
-  const [hoveredIndex, setHoveredIndex] = useState(false);
-  const { plan, setPlan } = useContext(planChose);
-  const [sp, setSp] = useState(false);
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   /*useEffect(() => {
     localStorage.setItem('number', JSON.stringify(hoveredIndex));
@@ -19,9 +15,9 @@ export const HomeMain = () => {
     localStorage.setItem('number', JSON.stringify(num));
   }*/
 
-  const goToServices = (num) => {
+  /*const goToServices = (num) => {
     navigate("/PlanDetail");
-  };
+  };*/
 
   const planDescription = [
     "Ideal para un hogar",

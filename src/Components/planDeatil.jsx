@@ -25,7 +25,6 @@ export const PlanDetail = () => {
     padding: "2rem",
     height: "660px"
   };
-  console.log(plan);
   const ShowData = (id) => {
     let tx = planesData.plan[id].id
     let h3 = planesData.description[id].id
