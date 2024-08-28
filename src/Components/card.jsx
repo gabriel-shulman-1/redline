@@ -39,11 +39,8 @@ export const Card = ({ tipo, pDescription, idx }) => {
         className={"card " + "c" + (idx + 1).toString()}
       >
         <h2 className="rubik-h3">{tittle}</h2>
-        {enter === true ? (
-          <img src={imagenDescription[currentImageIndex]} alt="" />
-        ) : (
-          ""
-        )}
+        {<img src={imagenDescription[currentImageIndex]} alt="" />
+        /*enter === true ? (<img src={imagenDescription[currentImageIndex]} alt="" />) : ("")*/}
         <p className="rubik-p5">{description}</p>
       </div>
     </>
