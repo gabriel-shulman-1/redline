@@ -1,5 +1,5 @@
 #contact-container {
-  padding: 9rem;
+  padding: 0 9rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,27 +24,43 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  margin: 1rem;
+  
 }
 
 .info-item .rubik-h2 {
   font-family: "Rubik", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
-  margin: 2rem;
+  margin: 1rem;
   color: white;
   font-size: xx-large;
 }
 
-.contact-info .rubik-h2 {
+.contact-info a {
+  text-decoration: none;
   font-family: "Rubik", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
   margin: 2rem;
   color: white;
-  font-size: xx-large;
+  font-size: large;
 }
 
-.contact-info iframe{
+.contact-info iframe {
   margin: 2rem;
 }
 
+.social-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 410px;
+}
+.social-links img{
+  width: 100px;
+}
+.social-links p{
+  margin: 0 auto 0 auto;
+}

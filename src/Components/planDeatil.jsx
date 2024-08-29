@@ -1,37 +1,95 @@
 import planesData from "../data/info.json";
+import "../styles/planDetail.css";
 import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import i1 from "../assets/iconos/casaMain.svg";
+import i2 from "../assets/iconos/camaraMain.svg";
+import i3 from "../assets/iconos/homeofficeMain.svg";
+import i4 from "../assets/iconos/pcgamerMain.svg";
+import i5 from "../assets/iconos/industriaMain.svg";
+
 export const PlanDetail = () => {
-  const planMain = {
-    display: "flex",
-    flexDirection: "row",
-    position: "static",
-    backgroundImage:
-      "linear-gradient(to right, #2c2c2c 0%, black 100%, #505050 0%)",
-    justifyContent: "space-around",
-    alignItems: "center",
-    padding: "2rem",
-    height: "660px"
-  };
+  const imagenDescription = [i1, i2, i3, i4, i5];
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const Navigate = useNavigate();
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
   const ShowData = () => {
-    const { Id } = useParams()
-    let tittle = {planesData}.planesData.plan[{Id}.Id].id
-    let text = {planesData}.planesData.description[{Id}.Id].id
+    const { Id } = useParams();
+    let num = {Id}.Id.length
+    let tittle = { planesData }.planesData.plan[{ Id }.Id].id;
+    let text = { planesData }.planesData.description[{ Id }.Id].id;
+    ShowImg(num.toString())
     return (
       <>
-      <h1>{tittle}</h1>
-      <p>{text}</p>
+        <h1 className="rubik-h1">Plan {tittle}</h1>
+        <p className="rubik-p5">{text}</p>
       </>
     );
   };
+
+  const ShowImg = ({id}) => {
+    useEffect(() => {
+      let plan = [
+        [i1, i2],
+        [i3, i2, i1],
+        [i4, i3, i2, i1],
+        [i5, i4, i3, i2, i1],
+      ];
+      console.log({id}.id)
+      //let index = plan[id]
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prevIndex) =>
+          prevIndex === {id}.length - 1 ? 0 : prevIndex + 1
+        );
+      }, 1000);
+
+      return () => clearInterval(interval);
+    });
+  };
+
+  const handlePrev = () => {
+    let back = [4, 3, 2, 1];
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? back.length - 1 : prevIndex - 1
+    );
+    Navigate("/PlanDetail/" + currentIndex.toString());
+  };
+
+  const handleNext = () => {
+    let go = [1, 2, 3, 4];
+    setCurrentIndex((prevIndex) =>
+      prevIndex === go.length - 1 ? 0 : prevIndex + 1
+    );
+    Navigate("/PlanDetail/" + currentIndex.toString());
+  };
+
   return (
-    <main style={planMain}>
-      <button className="slider">&#10094;</button>
+    <main id="planDetail">
+      <button
+        className="slider izq"
+        onClick={() => {
+          handlePrev();
+        }}
+      >
+        <span>&#10094;</span>
+      </button>
+
       <div className="descriptionContainer">
         <div className="txDescription">
-          <ShowData/>
+          <ShowData />
         </div>
+        <img src={imagenDescription[currentImageIndex]} alt="" />
       </div>
-      <button className="slider">&#10095;</button>
+      <button
+        className="slider der"
+        onClick={() => {
+          handleNext();
+        }}
+      >
+        <span>&#10095;</span>
+      </button>
     </main>
   );
 };

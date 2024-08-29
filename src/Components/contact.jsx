@@ -1,39 +1,48 @@
-import "../styles/contact.css"
+import "../styles/contact.css";
+import instagram from "../assets/Instagram.png";
+import wpsLogo from "../assets/wps.png";
+import mail from "../assets/mail.svg"
 export const Contact = () => {
   return (
     <main id="contact-container">
-
       <h1 className="rubik-h1">Contacto</h1>
 
       <div className="contact-info">
-        
-        <div className="info-item">
-          <h2 className="rubik-h2">Teléfono</h2>
-          <p>
-            <a href="tel:+54 011 5523-8433">+54 011 5523-8433</a>
-          </p>
-        </div>
 
         <div className="info-item">
-          <h2 className="rubik-h2">Email</h2>
-          <p>
-            <a href="mailto:redline.internet55@gmail.com">redline.internet55@gmail.com</a>
-          </p>
-        </div>
-
-        <div className="info-item">
-          <h2 className="rubik-h2">Redes Sociales</h2>
           <div className="social-links">
-            <a
-              href="https://www.instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Instagram
-            </a>
+          <img src={wpsLogo} alt="" />
+            <p>
+              <a href="tel:+54 011 5523-8433">+54 011 5523-8433</a>
+            </p>
           </div>
         </div>
 
+        <div className="info-item">
+          <div className="social-links">
+            <img src={mail} alt="" />
+            <p>
+            <a href="mailto:redline.internet55@gmail.com">
+              redline.internet55@gmail.com
+            </a>
+          </p>
+          </div>
+        </div>
+
+        <div className="info-item">
+          <div className="social-links">
+            <img src={instagram} alt="" />
+            <p>
+              <a
+                href="https://www.instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Instagram
+              </a>
+            </p>
+          </div>
+        </div>
       </div>
 
       <div className="contact-info">
@@ -50,7 +59,6 @@ export const Contact = () => {
           id="map"
         ></iframe>
       </div>
-
     </main>
   );
 };

@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: space-around;
   position: static;
+  text-align: center;
   background-image: linear-gradient(
     to center,
     #2c2c2c 0%,

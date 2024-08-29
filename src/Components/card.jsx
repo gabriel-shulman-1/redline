@@ -14,7 +14,6 @@ export const Card = ({ tipo, pDescription, idx }) => {
   const Navigate = useNavigate();
   
   const goToServices = (plan) => {
-    console.log({ plan }.plan.idx.toString());
     Navigate("/PlanDetail/" + { plan }.plan.idx.toString());
   };
   

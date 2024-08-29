@@ -1,5 +1,11 @@
 #planes {
-  margin: 9rem;
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  margin: 3rem 1rem 6rem 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .card {
@@ -7,7 +13,7 @@
   color: white;
   text-align: center;
   height: 22rem;
-  width: 22%;
+  width: 17%;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -40,22 +46,22 @@
   box-shadow: 0px 0px 18px 6px rgba(84, 212, 255, 0.747);
 }
 .c2:hover img {
-    animation: resize;
-    animation-duration: 1s;
-    width: 200px;
-    height: 200px;
-  }
+  animation: resize;
+  animation-duration: 1s;
+  width: 200px;
+  height: 200px;
+}
 
 .c3:hover {
   background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);
   box-shadow: 0px 0px 18px 6px rgba(221, 255, 30, 0.747);
 }
 .c3:hover img {
-    animation: resize;
-    animation-duration: 1s;
-    width: 200px;
-    height: 200px;
-  }
+  animation: resize;
+  animation-duration: 1s;
+  width: 200px;
+  height: 200px;
+}
 
 .c4:hover {
   background-image: linear-gradient(to right, #434343 0%, black 100%);
@@ -63,11 +69,11 @@
   box-shadow: 0px 0px 18px 6px rgba(255, 23, 23, 0.747);
 }
 .c4:hover img {
-    animation: resize;
-    animation-duration: 1s;
-    width: 200px;
-    height: 200px;
-  }
+  animation: resize;
+  animation-duration: 1s;
+  width: 200px;
+  height: 200px;
+}
 
 @keyframes resize {
   0% {

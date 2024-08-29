@@ -1,5 +1,5 @@
 #services {
-  padding: 9rem;
+  padding: 8rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,11 +14,11 @@
 }
 
 #services .ntdiv {
-  width: 70%;
+  width: 80%;
   margin: 50px auto;
   padding: 3rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: space-around;
   color: white;

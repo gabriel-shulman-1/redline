@@ -9,7 +9,7 @@ import "../styles/services.css"
 export const Services = () =>{
     return (
         <main id="services">
-        <h2 className="rubik-h2">Nuestros servicios</h2>
+        <h1 className="rubik-h1">Nuestros servicios</h1>
         <div className="ntdiv">
             <div className="tx">
                 <h3 className="rubik-h3">A que nos dedicamos</h3>

@@ -12,6 +12,7 @@ export const NavBar = () => {
             <img src={logo} alt="Logo" width="250px" />
           </NavLink>
         </div>
+        
         <div className="social-icons">
           <WhatsAppLink
             phoneNumber="+5401155238433"
@@ -33,9 +34,9 @@ export const NavBar = () => {
             <p className="rubik-p5">Nuestros servicios</p>
           </button>
         </NavLink>
-        <NavLink to={"/aboutUs"} className={"link"}>
+        <NavLink to={"/"} className={"link"}>
           <button className="nav-btn">
-            <p className="rubik-p5">Sobre nosotros</p>
+            <p className="rubik-p5">Nuestros planes</p>
           </button>
         </NavLink>
         <NavLink to={"/prices"} className={"link"}>

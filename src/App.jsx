@@ -4,7 +4,7 @@ import { NavBar } from "./Components/navBar.jsx";
 import { Footer } from "./Components/footer.jsx";
 import { HomeMain } from "./Components/homeMain.jsx";
 import { PlanDetail } from "./Components/planDeatil.jsx";
-import { AboutUs } from "./Components/aboutUs.jsx";
+import { Notify } from "./Components/notify.jsx";
 import { Contact } from "./Components/contact.jsx";
 import { Services } from "./Components/services.jsx";
 import { Prices } from "./Components/prices.jsx";
@@ -19,7 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomeMain />}></Route>
             <Route exact path="/services" element={<Services />}></Route>
-            <Route path="/aboutUs" element={<AboutUs />}></Route>
+            <Route path="/notify/:Name" element={<Notify />}></Route>
             <Route path="/contact" element={<Contact />}></Route>
             <Route path="/Prices" element={<Prices />}></Route>
             <Route path="/planDetail/:Id" element={<PlanDetail />}></Route>
