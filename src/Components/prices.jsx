@@ -41,32 +41,11 @@ export const Prices = () => {
     setGps(position);
   };
 
-  /*const SiWps = () =>{
-    return(
-      <div className="pricesDiv">
-          <label>
-            <p className="rubik-p5">
-              {tipo[0].toLocaleUpperCase() + tipo.substring(1)}
-            </p>
-          </label>
-          <input
-            type="text"
-            value={recipient}
-            onChange={(e) => setRecipient(e.target.value)}
-            placeholder={tipo === msgEmpty ? "" : "Introduzca su " + tipo}
-            className="slider-container"
-          />
-        </div>
-    )
-  }*/
-
     const handleCheckboxChange = (item) => {
       setSelectedItems(prevSelectedItems => {
         if (prevSelectedItems.includes(item)) {
-          // Si el elemento ya está seleccionado, lo eliminamos de la lista
           return prevSelectedItems.filter(selectedItem => selectedItem !== item);
         } else {
-          // Si no está seleccionado, lo agregamos a la lista
           return [...prevSelectedItems, item];
         }
       });

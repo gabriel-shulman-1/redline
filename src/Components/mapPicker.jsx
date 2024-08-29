@@ -4,7 +4,6 @@ import { MapContainer, TileLayer, Marker, useMapEvents } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 
-// Icono personalizado para el marcador
 const customIcon = new L.Icon({
   iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
   iconSize: [25, 41],
@@ -41,7 +40,7 @@ export const MapPicker = ({ initialPosition = [-34.6076, -58.9529], zoomLevel = 
 
   return (
     <div className='map-container'>
-      <MapContainer center={initialPosition} zoom={zoomLevel} style={{ height: '500px', width: '700px' }}>
+      <MapContainer center={initialPosition} zoom={zoomLevel} style={{ height: '500px', width: '700px'}}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

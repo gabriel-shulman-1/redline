@@ -10,3 +10,4 @@ export const WhatsAppLink = ({ phoneNumber, message }) => {
     </a>
   );
 };
+
