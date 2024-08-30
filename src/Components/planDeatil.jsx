@@ -17,10 +17,9 @@ export const PlanDetail = () => {
 
   const ShowData = () => {
     const { Id } = useParams();
-    let num = {Id}.Id.length
+    ShowImg(Id)
     let tittle = { planesData }.planesData.plan[{ Id }.Id].id;
     let text = { planesData }.planesData.description[{ Id }.Id].id;
-    ShowImg(num.toString())
     return (
       <>
         <h1 className="rubik-h1">Plan {tittle}</h1>
@@ -29,7 +28,7 @@ export const PlanDetail = () => {
     );
   };
 
-  const ShowImg = ({id}) => {
+  const ShowImg = (id) => {
     useEffect(() => {
       let plan = [
         [i1, i2],
@@ -37,13 +36,12 @@ export const PlanDetail = () => {
         [i4, i3, i2, i1],
         [i5, i4, i3, i2, i1],
       ];
-      console.log({id}.id)
-      //let index = plan[id]
+      let index = plan[id]
       const interval = setInterval(() => {
         setCurrentImageIndex((prevIndex) =>
-          prevIndex === {id}.length - 1 ? 0 : prevIndex + 1
+          prevIndex === index.length - 1 ? 0 : prevIndex + 1
         );
-      }, 1000);
+      }, 2000);
 
       return () => clearInterval(interval);
     });
@@ -80,7 +78,7 @@ export const PlanDetail = () => {
         <div className="txDescription">
           <ShowData />
         </div>
-        <img src={imagenDescription[currentImageIndex]} alt="" />
+        <img src={imagenDescription[currentImageIndex]} alt="" style={{width:"280px"}}/>
       </div>
       <button
         className="slider der"

@@ -12,22 +12,22 @@
   align-items: center;
 }
 
-.descriptionContainer{
+.descriptionContainer {
   width: 70%;
-    height: 25rem;
-    margin: 20px auto;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    box-shadow: 0px 0px 18px 6px rgba(255, 255, 255, 0.747);
+  height: 25rem;
+  margin: 20px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
+  box-shadow: 0px 0px 18px 6px rgba(255, 255, 255, 0.747);
 }
 
 .txDescription {
+  margin: 0;
   padding: 2rem 0 3rem 0;
-  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -37,10 +37,12 @@
   text-align: justify;
 }
 
+
+
 .slider {
-    margin: 0 auto 0 auto;
-    width: 45px;
-    height: 10rem;
+  margin: 0 auto 0 auto;
+  width: 45px;
+  height: 10rem;
   position: relative;
   top: 50%;
   background-color: rgba(0, 0, 0, 0.5);
@@ -48,28 +50,30 @@
   border: none;
   padding: 10px;
   cursor: pointer;
+  width: 50px;
+  height: 50px;
 }
-.slider.izq{
-    left: 10px;
+.slider.izq {
+  left: 10px;
 }
-.slider.der{
-    right: 10px;
+.slider.der {
+  right: 10px;
 }
-span{
-    display: block;
-    font-size: xx-large;
+span {
+  display: block;
+  font-size: xx-large;
 }
-.slider:hover{
-    animation: onButton 2s infinite alternate;
+.slider:hover {
+  animation: onButton 2s infinite alternate;
 }
 
 @keyframes onButton {
-    0%{
-        background-color: #50c0d452;
-        color: white;
-    }
-    100%{
-        background-color: #50c0d4;
-        color: black;
-    }
+  0% {
+    background-color: #50c0d452;
+    color: white;
+  }
+  100% {
+    background-color: #50c0d4;
+    color: black;
+  }
 }
