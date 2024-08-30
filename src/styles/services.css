@@ -79,3 +79,23 @@
 .gallery img:hover {
   transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el mouse */
 }
+
+@media screen and (max-width:500px){
+  #services{
+    height: max-content;
+    padding: inherit;
+  }
+  #services .ntdiv{
+    flex-direction: column;
+    align-items: center;
+  }
+  .ntdiv .tx{
+    width: auto;
+  }
+.phCont .ph{
+    display: none;
+  }
+  .gallery{
+    display: none;
+  }
+}

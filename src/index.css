@@ -57,6 +57,8 @@ header .top-bar .social-icons a:nth-child(2):hover img {
   box-shadow: 0px 0px 18px 6px rgba(229, 0, 250, 0.82);
 }
 
+
+
 /*plandetail*/
 
 .descriptionContainer {
@@ -167,4 +169,32 @@ footer .divFooter li {
   color: white;
   font-size: xx-large;
   text-align: center;
+}
+
+/*celus*/
+
+@media screen and (max-width: 500px) {
+  header {
+    margin-bottom: 0;
+  }
+  header .top-bar {
+    flex-direction: column;
+    padding-top: 2rem;
+    height: max-content;
+    background-position: 50% 40%;
+    height: -webkit-fill-available;
+    width: -webkit-fill-available;
+  }
+  header .top-bar .logo {
+    padding: 1rem 0;
+    scale: 1.5;
+  }
+  header .top-bar .social-icons a img {
+    height: 50px;
+    width: 50px;
+  }
+  footer{
+    flex-direction: column;
+    text-align: center;
+  }
 }

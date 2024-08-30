@@ -195,7 +195,7 @@ export const Prices = () => {
           style={{
             textAlign: "start",
             width: "80%",
-            height: "10rem",
+            height: "auto",
             borderColor: "white",
           }}
           className="slider-container"

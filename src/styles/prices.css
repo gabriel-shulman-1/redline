@@ -55,41 +55,20 @@
   justify-content: space-between;
 }
 
-.custom-slider {
-  margin-top: 18px;
-  width: 200px;
-  margin: 0px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-  height: 17px;
-}
-.rs-slider-handle {
-  /*top: -6px;*/
-  background-color: #3498ff;
-  text-align: center;
-  padding: 3px;
-  /*margin-left: -16px;*/
-  cursor: pointer;
-  left: 80%;
-  border-radius: 15px;
-  padding: 0.5rem;
-  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-.Handle{
-  left: 0;
-}
-.rs-slider-handle:hover {
-  box-shadow: 0 0 0 8px rgb(52 152 255 / 25%);
-}
-
-.rs-slider-handle::before {
-  display: none;
-}
-
-.rs-slider-dragging .rs-slider-handle,
-.rs-slider-dragging .rs-slider-handle:hover {
-  box-shadow: none;
-  transform: scale(1.2);
+@media screen and (max-width: 500px) {
+  #mainPrices{
+    padding: 0;
+  }
+  .areaCont{
+    flex-direction: column;
+  }
+  .pricesDiv textarea{
+    height: 40px;
+  }
+  .pricesDiv .mapContainer div.leaftlet-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
 }

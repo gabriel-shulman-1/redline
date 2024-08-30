@@ -1,4 +1,4 @@
-header .nav-bar {
+.nav-bar {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -6,9 +6,11 @@ header .nav-bar {
   align-items: center;
   padding: 2rem;
   background-color: #4b4b4b;
+  height: auto;
+  position: relative;
 }
 
-a .nav-btn{
+a .nav-btn {
   text-decoration: none;
 }
 .nav-btn {
@@ -51,4 +53,64 @@ a .nav-btn{
 .nav-btn:hover:after {
   width: 100%;
   transition: 800ms ease all;
+}
+
+@media screen and (max-width: 500px) {
+  .nav-bar {
+    padding: 0;
+    width: 60px;
+    height:60px;
+    position: fixed;
+    z-index: 10;
+    background: rgb(64, 236, 236);
+    background: linear-gradient(
+      90deg,
+      rgb(10, 115, 175) 0%,
+      rgba(174, 238, 237, 0) 100%
+    );
+    transition: all 1s ease-in-out;
+  }
+  .nav-bar .nav-btn {
+    display: none;
+    opacity: 0;
+  }
+  .nav-bar:hover {
+    flex-direction: column;
+    position: fixed;
+    width: 500px;
+    height: 400px;
+    transition: all 1s ease-in-out;
+  }
+  .nav-bar a{
+    text-decoration: none;
+  }
+  
+  .nav-bar:hover .nav-btn {
+    display: block;
+    margin: auto 0 auto;
+    width: 300px;
+    height: 50px;
+    animation: fadeIn 2s ease-in;
+    opacity: 1;
+  }
+
+  .nav-bar:hover a{
+    text-decoration: none;
+  }
+
+  .rubik-p5 {
+    font-size:medium;
+  }
+
+  @keyframes fadeIn {
+    0%{
+      opacity: 0;
+    }
+    90%{
+      opacity: 0;
+    }
+    100% {
+      opacity: 1; /* Aparecerá gradualmente */
+    }
+}
 }

@@ -37,8 +37,6 @@
   text-align: justify;
 }
 
-
-
 .slider {
   margin: 0 auto 0 auto;
   width: 45px;
@@ -76,4 +74,37 @@ span {
     background-color: #50c0d4;
     color: black;
   }
+}
+
+@media screen and (max-width: 500px) {
+  .descriptionContainer{
+    flex-direction: column;
+  }
+  .txDescription{
+    width: auto;
+  }
+  .rubik-h1{
+    margin: 0;
+    font-size: xx-large;
+    text-align: center;
+  }
+  .descriptionContainer img{
+    display: none;
+  }
+  .slider{
+    height: 250px;
+    animation: onButtonCF 2s infinite alternate;
+  }
+
+  @keyframes onButtonCF {
+    0% {
+      background-color: #000000;
+      color: white;
+    }
+    100% {
+      background-color: #50c0d4;
+      color: black;
+    }
+}
+
 }
