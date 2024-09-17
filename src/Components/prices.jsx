@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../styles/prices.css";
-import { MapPicker } from "./mapPicker";
 import data from "../data/info.json";
 import "leaflet/dist/leaflet.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -74,10 +73,6 @@ export const Prices = () => {
       Navigate("/notify/" + msn1);
       window.open(emailUrl, "_self");
     }
-  };
-
-  const handleLocationSelect = (position) => {
-    setGps(position);
   };
 
   const handleCheckboxChange = (item) => {
@@ -224,16 +219,12 @@ export const Prices = () => {
         </div>
       </div>
 
-      <div className="pricesDiv" style={{ height: "800px" }}>
-        <h2>Para una mejor atencion, seleccione su dirección en el mapa</h2>
-        <MapPicker onLocationSelect={handleLocationSelect} />
-      </div>
-
       <div className="pricesDiv" style={{ height: "auto", gap: "2rem" }}>
         <p className="rubik-p5">
           Para finalizar, elegi el medio de contacto que vos prefieras:
         </p>
 
+        
 
         <button onClick={handleSend} className="nav-btn">
           Pedir presupuesto

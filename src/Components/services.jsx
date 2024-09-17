@@ -7,9 +7,11 @@ import foto5 from "../assets/fabricaService.jpg"
 import foto6 from "../assets/empresaService.jpg"
 import "../styles/services.css"
 export const Services = () =>{
+    
     return (
         <main id="services">
         <h1 className="rubik-h1">Nuestros servicios</h1>
+
         <div className="ntdiv">
             <div className="tx">
                 <h3 className="rubik-h3">A que nos dedicamos</h3>
