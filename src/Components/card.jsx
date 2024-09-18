@@ -11,6 +11,7 @@ export const Card = ({ tipo, pDescription, idx }) => {
   const imagenDescription = [i1, i2, i3, i4, i5];
   const [enter, setEnter] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [loading, setLoading] = useState(true)
   const Navigate = useNavigate();
   
   const goToServices = (plan) => {
@@ -27,6 +28,7 @@ export const Card = ({ tipo, pDescription, idx }) => {
     let index = plan[idx]
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => prevIndex === index.length - 1 ? 0 : prevIndex + 1);
+      {setLoading(false)}
     }, 1000);
 
     return () => clearInterval(interval);}, );
@@ -34,6 +36,8 @@ export const Card = ({ tipo, pDescription, idx }) => {
   let tittle = { tipo }.tipo.id;
   let description = { pDescription }.pDescription;
 
+
+  if (loading) return <div className="loading">Loading...</div>
   return (
     <>
       <div
@@ -46,7 +50,7 @@ export const Card = ({ tipo, pDescription, idx }) => {
       >
         <h2 className="rubik-h3">{tittle}</h2>
         {enter === true ? (
-          <img src={imagenDescription[currentImageIndex]} alt="" />
+          <img src={imagenDescription[currentImageIndex]} alt={imagenDescription[currentImageIndex]}/>
         ) : (
           ""
         )}
