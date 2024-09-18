@@ -28,7 +28,7 @@ export const Card = ({ tipo, pDescription, idx }) => {
     let index = plan[idx]
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => prevIndex === index.length - 1 ? 0 : prevIndex + 1);
-      {setLoading(false)}
+      setLoading(false)
     }, 1000);
 
     return () => clearInterval(interval);}, );
@@ -37,7 +37,7 @@ export const Card = ({ tipo, pDescription, idx }) => {
   let description = { pDescription }.pDescription;
 
 
-  if (loading) return <div className="loading">Loading...</div>
+  if (loading) return <div className="loading" style={{color:"transparent"}}>Loading...</div>
   return (
     <>
       <div

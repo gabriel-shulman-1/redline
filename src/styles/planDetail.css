@@ -24,7 +24,22 @@
   border-radius: 10px;
   box-shadow: 0px 0px 18px 6px rgba(255, 255, 255, 0.747);
 }
-
+.cont1{
+  background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,0) 8%, rgba(32,250,255,0.4906337535014006) 100%);
+}
+.cont2{
+  background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,0) 8%, rgba(32,96,255,0.4906337535014006) 100%);
+}
+.cont3{
+  background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,0) 8%, rgba(224,255,32,0.4906337535014006) 100%);
+}
+.cont4{
+  background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,0) 8%, rgba(255,32,32,0.4906337535014006) 100%);
+}
 .txDescription {
   margin: 0;
   padding: 2rem 0 3rem 0;

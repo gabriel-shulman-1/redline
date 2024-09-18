@@ -5,12 +5,7 @@
   align-items: center;
   justify-content: space-around;
   position: static;
-  background-image: linear-gradient(
-    to center,
-    #2c2c2c 0%,
-    black 100%,
-    #505050 0%
-  );
+  background-color: transparent;
 }
 
 #services .ntdiv {

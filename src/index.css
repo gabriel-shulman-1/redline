@@ -6,6 +6,7 @@ body {
   display: flex;
   flex-direction: column;
   font-family: Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(to center, #2c2c2c 0%, black 100%, #505050 0%);
 }
 header {
   height: -webkit-fill-available;
@@ -55,8 +56,6 @@ header .top-bar .social-icons a:nth-child(2):hover img {
   -moz-box-shadow: 0px 0px 18px 6px rgba(229, 0, 250, 0.82);
   box-shadow: 0px 0px 18px 6px rgba(229, 0, 250, 0.82);
 }
-
-
 
 /*plandetail*/
 

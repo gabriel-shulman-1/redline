@@ -17,9 +17,9 @@ export const PlanDetail = () => {
 
   const ShowData = () => {
     const { Id } = useParams();
-    ShowImg(Id)
-    let tittle = { planesData }.planesData.plan[{ Id }.Id].id;
-    let text = { planesData }.planesData.description[{ Id }.Id].id;
+    ShowImg(currentIndex)
+    let tittle = { planesData }.planesData.plan[currentIndex].id;
+    let text = { planesData }.planesData.description[currentIndex].id;
     return (
       <>
         <h1 className="rubik-h1">Plan {tittle}</h1>
@@ -74,11 +74,12 @@ export const PlanDetail = () => {
         <span>&#10094;</span>
       </button>
 
-      <div className="descriptionContainer">
+      <div 
+      className={"descriptionContainer cont"+(currentIndex+1).toString()}>
         <div className="txDescription">
           <ShowData />
         </div>
-        <img src={imagenDescription[currentImageIndex]} alt="" style={{width:"280px"}}/>
+        <img src={imagenDescription[currentImageIndex]} alt={imagenDescription[currentImageIndex]} style={{width:"280px"}}/>
       </div>
       <button
         className="slider der"
