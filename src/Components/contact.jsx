@@ -11,7 +11,7 @@ export const Contact = () => {
 
         <div className="info-item">
           <div className="social-links">
-          <img src={wpsLogo} alt="" />
+          <img src={wpsLogo} alt={wpsLogo} />
             <p>
               <a href="tel:+54 011 5523-8433">+54 011 5523-8433</a>
             </p>
@@ -20,7 +20,7 @@ export const Contact = () => {
 
         <div className="info-item">
           <div className="social-links">
-            <img src={mail} alt="" />
+            <img src={mail} alt={mail} />
             <p>
             <a href="mailto:redline.internet55@gmail.com">
               redline.internet55@gmail.com
@@ -31,7 +31,7 @@ export const Contact = () => {
 
         <div className="info-item">
           <div className="social-links">
-            <img src={instagram} alt="" />
+            <img src={instagram} alt={instagram} />
             <p>
               <a
                 href="https://www.instagram.com"

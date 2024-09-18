@@ -52,15 +52,31 @@
 }
 
 .social-links {
+  position: relative;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 410px;
 }
+
 .social-links img{
   width: 100px;
+  position: relative;
+  left: 40%;
 }
+.social-links a{
+  color: transparent;
+  right: 40%;
+}
+.social-links:hover img{
+  left: 0%;
+}
+.social-links:hover a{
+  color: white;
+  right: 0%;
+}
+
 .social-links p{
   margin: 0 auto 0 auto;
 }
