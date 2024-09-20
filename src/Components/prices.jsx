@@ -4,8 +4,8 @@ import data from "../data/info.json";
 import "leaflet/dist/leaflet.css";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
-import wps from "../assets/wps.svg";
-import mail from "../assets/mail.svg";
+//import wps from "../assets/wps.svg";
+//import mail from "../assets/mail.svg";
 
 export const Prices = () => {
   const [msn1, setMsn1] = useState("");
@@ -15,7 +15,7 @@ export const Prices = () => {
   const [msn5, setMsn5] = useState("");
   const [msn6, setMsn6] = useState("");
   const [msn7, setMsn7] = useState("");
-  const [gps, setGps] = useState("");
+  const [medio,setMedio] = useState(false);
   const [method, setMethod] = useState("whatsapp");
   const [selectedItems, setSelectedItems] = useState([]);
   const Navigate = useNavigate();
@@ -48,12 +48,7 @@ export const Prices = () => {
       const whatsappUrl = `https://wa.me/+5491126890280?text=${encodeURIComponent(
         intro +
           ". Planes solicitados: " +
-          intro5 +
-          ". Coordenadas: " +
-          " Y=" +
-          gps[0] +
-          " X=" +
-          gps[1]
+          intro5
       )}`;
       Navigate("/notify/" + msn1);
       window.open(whatsappUrl, "_blank");
@@ -64,10 +59,6 @@ export const Prices = () => {
         { msn1 }.msn1 +
         "&body=" +
         intro +
-        ". Ubicación: Y " +
-        gps[0] +
-        " X " +
-        gps[1] +
         ". Planes solicitados: " +
         intro5;
       Navigate("/notify/" + msn1);
@@ -85,6 +76,16 @@ export const Prices = () => {
         return [...prevSelectedItems, item];
       }
     });
+  };
+
+  //construir selector de forma de envio whatsapp/email
+  const selectMedio = (opcion) => {
+    setMedio(!medio)
+    if (opcion){
+      setMethod("email")
+    } else {
+      setMethod("whatsapp")
+    }
   };
 
 
@@ -224,7 +225,7 @@ export const Prices = () => {
           Para finalizar, elegi el medio de contacto que vos prefieras:
         </p>
 
-        
+        <button onClick={() => selectMedio(medio)}>{method}</button>
 
         <button onClick={handleSend} className="nav-btn">
           Pedir presupuesto
