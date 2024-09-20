@@ -15,8 +15,9 @@ export const Prices = () => {
   const [msn5, setMsn5] = useState("");
   const [msn6, setMsn6] = useState("");
   const [msn7, setMsn7] = useState("");
-  const [medio,setMedio] = useState(false);
+  const [medio, setMedio] = useState(false);
   const [method, setMethod] = useState("whatsapp");
+  const [color,setColor] = useState("#9fff89")
   const [selectedItems, setSelectedItems] = useState([]);
   const Navigate = useNavigate();
 
@@ -46,9 +47,7 @@ export const Prices = () => {
 
     if (method === "whatsapp") {
       const whatsappUrl = `https://wa.me/+5491126890280?text=${encodeURIComponent(
-        intro +
-          ". Planes solicitados: " +
-          intro5
+        intro + ". Planes solicitados: " + intro5
       )}`;
       Navigate("/notify/" + msn1);
       window.open(whatsappUrl, "_blank");
@@ -80,14 +79,22 @@ export const Prices = () => {
 
   //construir selector de forma de envio whatsapp/email
   const selectMedio = (opcion) => {
-    setMedio(!medio)
-    if (opcion){
-      setMethod("email")
+    setMedio(!medio);
+    if (opcion) {
+      setColor("#ff0000")
+      setMethod("email");
     } else {
-      setMethod("whatsapp")
+      setColor("#9fff89")
+      setMethod("whatsapp");
     }
   };
 
+  const style1 = {
+    textAlign: "center",
+    width: "80%",
+    height: "auto",
+    borderColor: "white",
+  };
 
   return (
     <main id="mainPrices">
@@ -116,12 +123,7 @@ export const Prices = () => {
             value={msn2}
             onChange={(e) => setMsn2(e.target.value)}
             placeholder="Apellido"
-            style={{
-              textAlign: "center",
-              width: "80%",
-              height: "auto",
-              borderColor: "white",
-            }}
+            style={style1}
             className="slider-container"
           />
         </div>
@@ -130,12 +132,7 @@ export const Prices = () => {
             value={msn3}
             onChange={(e) => setMsn3(e.target.value)}
             placeholder="DNI"
-            style={{
-              textAlign: "center",
-              width: "80%",
-              height: "auto",
-              borderColor: "white",
-            }}
+            style={style1}
             className="slider-container"
           />
 
@@ -143,12 +140,7 @@ export const Prices = () => {
             value={msn4}
             onChange={(e) => setMsn4(e.target.value)}
             placeholder="CUIL"
-            style={{
-              textAlign: "center",
-              width: "80%",
-              height: "auto",
-              borderColor: "white",
-            }}
+            style={style1}
             className="slider-container"
           />
         </div>
@@ -157,12 +149,7 @@ export const Prices = () => {
             value={msn5}
             onChange={(e) => setMsn5(e.target.value)}
             placeholder="Dirección/descripción del lugar"
-            style={{
-              textAlign: "center",
-              width: "80%",
-              height: "auto",
-              borderColor: "white",
-            }}
+            style={style1}
             className="slider-container"
           />
 
@@ -170,12 +157,7 @@ export const Prices = () => {
             value={msn6}
             onChange={(e) => setMsn6(e.target.value)}
             placeholder="Altura"
-            style={{
-              textAlign: "center",
-              width: "80%",
-              height: "auto",
-              borderColor: "white",
-            }}
+            style={style1}
             className="slider-container"
           />
         </div>
@@ -188,12 +170,7 @@ export const Prices = () => {
           value={msn7}
           onChange={(e) => setMsn7(e.target.value)}
           placeholder="Describa su ubicación y sus requerimientos de internet"
-          style={{
-            textAlign: "start",
-            width: "80%",
-            height: "auto",
-            borderColor: "white",
-          }}
+          style={style1}
           className="slider-container"
         />
 
@@ -225,11 +202,18 @@ export const Prices = () => {
           Para finalizar, elegi el medio de contacto que vos prefieras:
         </p>
 
-        <button onClick={() => selectMedio(medio)}>{method}</button>
+        <button 
+        onClick={() => selectMedio(medio)} 
+        id="medioButton" 
+        style={{backgroundColor:color}}
+        >
+          <p className="rubik-p5" style={{fontWeight:"bold"}}>{method}</p>
+        </button>
 
         <button onClick={handleSend} className="nav-btn">
           Pedir presupuesto
         </button>
+
       </div>
     </main>
   );

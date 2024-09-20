@@ -55,17 +55,23 @@
   justify-content: space-between;
 }
 
+#medioButton {
+  width: 120px;
+  height: auto;
+  border-radius: 20px;
+}
+
 @media screen and (max-width: 500px) {
-  #mainPrices{
+  #mainPrices {
     padding: 0;
   }
-  .areaCont{
+  .areaCont {
     flex-direction: column;
   }
-  .pricesDiv textarea{
+  .pricesDiv textarea {
     height: 40px;
   }
-  .pricesDiv .mapContainer div.leaftlet-container{
+  .pricesDiv .mapContainer div.leaftlet-container {
     display: flex;
     flex-direction: column;
     align-items: center;
