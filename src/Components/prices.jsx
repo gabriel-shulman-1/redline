@@ -9,58 +9,86 @@ import { useNavigate } from "react-router-dom";
 
 export const Prices = () => {
   const [msn1, setMsn1] = useState("");
-  const [msn2, setMsn2] = useState("");
-  const [msn3, setMsn3] = useState("");
-  const [msn4, setMsn4] = useState("");
-  const [msn5, setMsn5] = useState("");
-  const [msn6, setMsn6] = useState("");
   const [msn7, setMsn7] = useState("");
   const [medio, setMedio] = useState(false);
   const [method, setMethod] = useState("whatsapp");
-  const [color,setColor] = useState("#9fff89")
+  const [color, setColor] = useState("#9fff89");
   const [selectedItems, setSelectedItems] = useState([]);
   const Navigate = useNavigate();
 
+  //generador de textarea
+  //agregar control de blanco
+  //agregar control de datos(int,string,ect)
+  const entradas = [
+    "Nombre",
+    "Apellido",
+    "DNI",
+    "CUIL",
+    "Dirección/descripción del lugar",
+    "Altura",
+    "Describa su ubicación y sus requerimientos de internet",
+  ];
+  const [textareaValues, setTextareaValues] = useState({
+    Nombre: "",
+    Apellido: "",
+    DNI: "",
+    CUIL: "",
+    Dirección: "",
+    Altura: "",
+    Descripcion: "",
+  });
+  const handleTextareaChange = (e, attribute) => {
+    const { value } = e.target;
+    setTextareaValues((prevValues) => ({
+      ...prevValues,
+      [attribute]: value,
+    }));
+  };
+
   const handleSend = () => {
+    console.log(textareaValues);
     let intro =
       "nombre y apellido :" +
-      msn1 +
-      msn2 +
+      textareaValues.Nombre +
+      textareaValues.Apellido +
       ". DNI: " +
-      msn3 +
+      textareaValues.DNI +
       ". CUIL: " +
-      msn4 +
+      textareaValues.CUIL +
       ". Dirección: " +
-      msn5 +
+      textareaValues.Dirección +
       ". Altura: " +
-      msn6;
-    let intro5 = "Detalles: " + msn7 + ". Planes solicitados: ";
+      textareaValues.Altura +
+      " .Detalles: " +
+      textareaValues.Descripcion;
+
+    let intro2 = " . Planes solicitados: ";
 
     for (
       let index = 0;
       index < { selectedItems }.selectedItems.length;
       index++
     ) {
-      intro5 =
-        intro5 + { selectedItems }.selectedItems[index].id.toString() + " ";
+      intro2 =
+        intro2 + { selectedItems }.selectedItems[index].id.toString() + " ";
     }
 
     if (method === "whatsapp") {
       const whatsappUrl = `https://wa.me/+5491126890280?text=${encodeURIComponent(
-        intro + ". Planes solicitados: " + intro5
+        intro + ". Planes solicitados: " + intro2
       )}`;
-      Navigate("/notify/" + msn1);
+      Navigate("/notify/" + textareaValues.Nombre);
       window.open(whatsappUrl, "_blank");
     } else if (method === "email") {
-      console.log(intro5);
+      console.log(intro2);
       const emailUrl =
         "mailto:someone@example.com?subject=Nuevo cliente " +
         { msn1 }.msn1 +
         "&body=" +
         intro +
-        ". Planes solicitados: " +
-        intro5;
-      Navigate("/notify/" + msn1);
+        ". " +
+        intro2;
+      Navigate("/notify/" + textareaValues.Nombre);
       window.open(emailUrl, "_self");
     }
   };
@@ -81,10 +109,10 @@ export const Prices = () => {
   const selectMedio = (opcion) => {
     setMedio(!medio);
     if (opcion) {
-      setColor("#ff0000")
+      setColor("#ff0000");
       setMethod("email");
     } else {
-      setColor("#9fff89")
+      setColor("#9fff89");
       setMethod("whatsapp");
     }
   };
@@ -93,88 +121,33 @@ export const Prices = () => {
     textAlign: "center",
     width: "80%",
     height: "auto",
-    borderColor: "white",
+    borderColor: "blue",
   };
 
   return (
     <main id="mainPrices">
       <h1 className="rubik-h1">Cotiza tu conexión</h1>
-
       <div className="pricesDiv">
-        <label>
-          <p className="rubik-p5">Introduzca sus datos:</p>
-        </label>
-
-        <div className="areaCont">
-          <textarea
-            value={msn1}
-            onChange={(e) => setMsn1(e.target.value)}
-            placeholder="Nombre"
-            style={{
-              textAlign: "center",
-              width: "80%",
-              height: "auto",
-              borderColor: "white",
-            }}
-            className="slider-container"
-          />
-
-          <textarea
-            value={msn2}
-            onChange={(e) => setMsn2(e.target.value)}
-            placeholder="Apellido"
-            style={style1}
-            className="slider-container"
-          />
-        </div>
-        <div className="areaCont">
-          <textarea
-            value={msn3}
-            onChange={(e) => setMsn3(e.target.value)}
-            placeholder="DNI"
-            style={style1}
-            className="slider-container"
-          />
-
-          <textarea
-            value={msn4}
-            onChange={(e) => setMsn4(e.target.value)}
-            placeholder="CUIL"
-            style={style1}
-            className="slider-container"
-          />
-        </div>
-        <div className="areaCont">
-          <textarea
-            value={msn5}
-            onChange={(e) => setMsn5(e.target.value)}
-            placeholder="Dirección/descripción del lugar"
-            style={style1}
-            className="slider-container"
-          />
-
-          <textarea
-            value={msn6}
-            onChange={(e) => setMsn6(e.target.value)}
-            placeholder="Altura"
-            style={style1}
-            className="slider-container"
-          />
-        </div>
-
-        <label>
-          <p className="rubik-p5">Mensaje:</p>
-        </label>
-
-        <textarea
-          value={msn7}
-          onChange={(e) => setMsn7(e.target.value)}
-          placeholder="Describa su ubicación y sus requerimientos de internet"
-          style={style1}
-          className="slider-container"
-        />
-
-        <p className="rubik-p5">Elegi el plan por el cual estás interesado</p>
+        {entradas.map((entrada, index) => (
+          <>
+            <label>
+              <p className="rubik-p5">{entrada}</p>
+            </label>
+            <textarea
+              key={index}
+              name={entrada}
+              value={textareaValues[entrada]}
+              style={style1}
+              onChange={(e) => handleTextareaChange(e, entrada)}
+            />
+          </>
+        ))}
+        <h2
+          className="rubik-h2"
+          style={{ fontSize: "xx-large", padding: "1rem" }}
+        >
+          Elegi el plan por el cual estás interesado
+        </h2>
         <div style={{ display: "flex", flexDirection: "row" }}>
           {data.plan.map((option) => (
             <div key={option.id}>
@@ -202,18 +175,19 @@ export const Prices = () => {
           Para finalizar, elegi el medio de contacto que vos prefieras:
         </p>
 
-        <button 
-        onClick={() => selectMedio(medio)} 
-        id="medioButton" 
-        style={{backgroundColor:color}}
+        <button
+          onClick={() => selectMedio(medio)}
+          id="medioButton"
+          style={{ backgroundColor: color }}
         >
-          <p className="rubik-p5" style={{fontWeight:"bold"}}>{method}</p>
+          <p className="rubik-p5" style={{ fontWeight: "bold" }}>
+            {method}
+          </p>
         </button>
 
         <button onClick={handleSend} className="nav-btn">
           Pedir presupuesto
         </button>
-
       </div>
     </main>
   );
