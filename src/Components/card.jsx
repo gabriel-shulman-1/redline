@@ -39,6 +39,7 @@ export const Card = ({ tipo, pDescription, idx }) => {
 
 
   if (loading) return <div className="loading" style={{color:"transparent"}}>Loading...</div>
+  
   return (
     <>
       <div

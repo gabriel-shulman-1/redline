@@ -3,7 +3,12 @@ import "../styles/navBarB.css";
 import instaLogo from "../assets/Instagram.png";
 import { NavLink } from "react-router-dom";
 import { WhatsAppLink } from "./wps";
+import useResponsive from './useResponsive';
 export const NavBar = () => {
+  const { isMobile, isTablet, isDesktop } = useResponsive();
+  console.log(isDesktop)
+  console.log(isTablet)
+  console.log(isMobile)
   return (
     <header>
       <div className="top-bar">
