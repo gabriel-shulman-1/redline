@@ -10,6 +10,7 @@ export const Prices = () => {
   const [method, setMethod] = useState("whatsapp");
   const [color, setColor] = useState("#9fff89");
   const [selectedItems, setSelectedItems] = useState([]);
+  const [errors, setErrors] = useState({});
   const Navigate = useNavigate();
 
   //generador de textarea
@@ -39,9 +40,29 @@ export const Prices = () => {
       ...prevValues,
       [attribute]: value,
     }));
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      [attribute]: '',
+    }));
   };
 
+  const validateFields = () => {
+    const newErrors = {};
+    entradas.forEach((entrada) => {
+      if (!textareaValues[entrada]) {
+        newErrors[entrada] = `El campo ${entrada} no puede estar vacío.`;
+      }
+    });
+    return newErrors;
+  };
+
+
+
   const handleSend = () => {
+    const newErrors = validateFields();
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+    } else {
     console.log(textareaValues);
     let intro =
       "nombre y apellido :" +
@@ -87,7 +108,7 @@ export const Prices = () => {
         intro2;
       Navigate("/notify/" + textareaValues.Nombre);
       window.open(emailUrl, "_self");
-    }
+    }}
   };
 
   const handleCheckboxChange = (item) => {
@@ -120,6 +141,7 @@ export const Prices = () => {
     width: "60%",
     height: "auto",
     borderColor: "blue",
+    margin: "1rem",
   };
 
   return (
@@ -127,13 +149,29 @@ export const Prices = () => {
       <h1 className="rubik-h1">Cotiza tu conexión</h1>
       <div className="pricesDiv">
         <div className="areaCont">
+          <h2
+            className="rubik-h2"
+            style={{ fontSize: "xx-large", padding: "1rem" }}
+          >
+            Ingrese sus datos
+          </h2>
           {entradas.map((entrada, index) => (
             <div key={index} style={style1}>
               <label>
                 <p className="rubik-p5">{entrada}</p>
+                {errors[entrada] && <p style={{ color: 'red' }}>{errors[entrada]}</p>}
               </label>
-              <textarea
-              style={{width:"80%"}}
+              <input
+                type={
+                  index !== 2 && index !== 3 && index !== 5 ? "text" : "number"
+                }
+                style={{
+                  width: "80%",
+                  height: "30px",
+                  padding: "0.4rem",
+                  borderRadius: "10px",
+                  borderStyle: "none",
+                }}
                 name={entrada}
                 value={textareaValues[entrada]}
                 onChange={(e) => handleTextareaChange(e, entrada)}
@@ -141,35 +179,38 @@ export const Prices = () => {
             </div>
           ))}
         </div>
-        <h2
-          className="rubik-h2"
-          style={{ fontSize: "xx-large", padding: "1rem" }}
-        >
-          Elegi el plan por el cual estás interesado
-        </h2>
-        <div style={{ display: "flex", flexDirection: "row" }}>
-          {data.plan.map((option) => (
-            <div key={option.id}>
-              <p className="rubik-p5">{option.id}</p>
-              <input
-                type="checkbox"
-                className={"checkBox " + option.id}
-                name={option.id}
-                value={option}
-                checked={selectedItems.includes(option)}
-                onChange={() => handleCheckboxChange(option)}
-                style={{
-                  width: "25px",
-                  height: "25px",
-                }}
-              />
-              <label htmlFor={"checkbox-" + option.id}>{option.label}</label>
-            </div>
-          ))}
+
+        <div className="areaCont">
+          <h2
+            className="rubik-h2"
+            style={{ fontSize: "xx-large", padding: "1rem" }}
+          >
+            Elegi el plan por el cual estás interesado
+          </h2>
+          <div style={{ display: "flex", flexDirection: "row" }}>
+            {data.plan.map((option) => (
+              <div key={option.id}>
+                <p className="rubik-p5">{option.id}</p>
+                <input
+                  type="checkbox"
+                  className={"checkBox " + option.id}
+                  name={option.id}
+                  value={option}
+                  checked={selectedItems.includes(option)}
+                  onChange={() => handleCheckboxChange(option)}
+                  style={{
+                    width: "25px",
+                    height: "25px",
+                  }}
+                />
+                <label htmlFor={"checkbox-" + option.id}>{option.label}</label>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      <div className="pricesDiv" style={{ height: "auto", gap: "2rem" }}>
+      <div className="pricesDiv" style={{ gap: "2rem" }}>
         <p className="rubik-p5">
           Para finalizar, elegi el medio de contacto que vos prefieras:
         </p>
@@ -177,10 +218,14 @@ export const Prices = () => {
         <button
           onClick={() => selectMedio(medio)}
           id="medioButton"
-          style={{ backgroundColor: color }}
+          style={{ backgroundColor: color,borderStyle:"none" }}
         >
-          <p className="rubik-p5" style={{ fontWeight: "bold" }}>
-            {method}
+          <p
+            className="rubik-p5"
+            style={{ fontWeight: "bold"}}
+            fontWeight="bold"
+          >
+            {medio?"Whatsapp":"Email"}
           </p>
         </button>
 

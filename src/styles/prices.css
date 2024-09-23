@@ -35,7 +35,7 @@
   align-items: center;
   width: 100%;
   border-color: white;
-  gap: 1rem;
+  margin: 1rem 0 1rem 0;
 }
 
 .pricesDiv textarea {
@@ -59,7 +59,7 @@
 #medioButton {
   width: 120px;
   height: auto;
-  border-radius: 20px;
+  border-radius: 5px;
 }
 
 @media screen and (max-width: 500px) {
