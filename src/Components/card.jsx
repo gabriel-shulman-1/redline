@@ -13,9 +13,10 @@ export const Card = ({ tipo, pDescription, idx }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [loading, setLoading] = useState(true)
   const Navigate = useNavigate();
+
   
   const goToServices = (plan) => {
-    Navigate("/PlanDetail/" + { plan }.plan.idx.toString());
+    Navigate("/PlanDetail/" + (plan.idx).toString());
   };
   
   useEffect(() => {
@@ -46,7 +47,7 @@ export const Card = ({ tipo, pDescription, idx }) => {
         }}
         onMouseEnter={() => setEnter(true)}
         onMouseLeave={() => setEnter(false)}
-        className={"card c" + (idx + 1).toString()}
+        className={"card c" + (idx).toString()}
       >
         <h2 className="rubik-h3">{tittle}</h2>
         {enter === true ? (

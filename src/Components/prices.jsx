@@ -42,7 +42,7 @@ export const Prices = () => {
     }));
     setErrors((prevErrors) => ({
       ...prevErrors,
-      [attribute]: '',
+      [attribute]: "",
     }));
   };
 
@@ -56,59 +56,58 @@ export const Prices = () => {
     return newErrors;
   };
 
-
-
   const handleSend = () => {
     const newErrors = validateFields();
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
     } else {
-    console.log(textareaValues);
-    let intro =
-      "nombre y apellido :" +
-      textareaValues.Nombre +
-      textareaValues.Apellido +
-      ". DNI: " +
-      textareaValues.DNI +
-      ". CUIL: " +
-      textareaValues.CUIL +
-      ". Dirección: " +
-      textareaValues.Dirección +
-      ". Altura: " +
-      textareaValues.Altura +
-      " .Detalles: " +
-      textareaValues.Descripcion;
-
-    let intro2 = " . Planes solicitados: ";
-
-    for (
-      let index = 0;
-      index < { selectedItems }.selectedItems.length;
-      index++
-    ) {
-      intro2 =
-        intro2 + { selectedItems }.selectedItems[index].id.toString() + " ";
-    }
-
-    if (method === "whatsapp") {
-      const whatsappUrl = `https://wa.me/+5491126890280?text=${encodeURIComponent(
-        intro + ". Planes solicitados: " + intro2
-      )}`;
-      Navigate("/notify/" + textareaValues.Nombre);
-      window.open(whatsappUrl, "_blank");
-    } else if (method === "email") {
-      console.log(intro2);
-      const emailUrl =
-        "mailto:someone@example.com?subject=Nuevo cliente " +
+      console.log(textareaValues);
+      let intro =
+        "nombre y apellido :" +
         textareaValues.Nombre +
         textareaValues.Apellido +
-        "&body=" +
-        intro +
-        ". " +
-        intro2;
-      Navigate("/notify/" + textareaValues.Nombre);
-      window.open(emailUrl, "_self");
-    }}
+        ". DNI: " +
+        textareaValues.DNI +
+        ". CUIL: " +
+        textareaValues.CUIL +
+        ". Dirección: " +
+        textareaValues.Dirección +
+        ". Altura: " +
+        textareaValues.Altura +
+        " .Detalles: " +
+        textareaValues.Descripcion;
+
+      let intro2 = " . Planes solicitados: ";
+
+      for (
+        let index = 0;
+        index < { selectedItems }.selectedItems.length;
+        index++
+      ) {
+        intro2 =
+          intro2 + { selectedItems }.selectedItems[index].id.toString() + " ";
+      }
+
+      if (method === "whatsapp") {
+        const whatsappUrl = `https://wa.me/+5491126890280?text=${encodeURIComponent(
+          intro + ". Planes solicitados: " + intro2
+        )}`;
+        Navigate("/notify/" + textareaValues.Nombre);
+        window.open(whatsappUrl, "_blank");
+      } else if (method === "email") {
+        console.log(intro2);
+        const emailUrl =
+          "mailto:someone@example.com?subject=Nuevo cliente " +
+          textareaValues.Nombre +
+          textareaValues.Apellido +
+          "&body=" +
+          intro +
+          ". " +
+          intro2;
+        Navigate("/notify/" + textareaValues.Nombre);
+        window.open(emailUrl, "_self");
+      }
+    }
   };
 
   const handleCheckboxChange = (item) => {
@@ -127,10 +126,10 @@ export const Prices = () => {
   const selectMedio = (opcion) => {
     setMedio(!medio);
     if (opcion) {
-      setColor("#ff0000");
+      setColor(["#ff0000","#ffffff"]);
       setMethod("email");
     } else {
-      setColor("#9fff89");
+      setColor(["#9fff89","#000000"]);
       setMethod("whatsapp");
     }
   };
@@ -159,8 +158,9 @@ export const Prices = () => {
             <div key={index} style={style1}>
               <label>
                 <p className="rubik-p5">{entrada}</p>
-                {errors[entrada] && <p style={{ color: 'red' }}>{errors[entrada]}</p>}
-              </label>
+                {errors[entrada] && (
+                  <p style={{ color: "red" }}>{errors[entrada]}</p>
+                )}
               <input
                 type={
                   index !== 2 && index !== 3 && index !== 5 ? "text" : "number"
@@ -175,7 +175,8 @@ export const Prices = () => {
                 name={entrada}
                 value={textareaValues[entrada]}
                 onChange={(e) => handleTextareaChange(e, entrada)}
-              />
+                />
+                </label>
             </div>
           ))}
         </div>
@@ -190,11 +191,11 @@ export const Prices = () => {
           <div style={{ display: "flex", flexDirection: "row" }}>
             {data.plan.map((option) => (
               <div key={option.id}>
-                <p className="rubik-p5">{option.id}</p>
+                <label>
+                  <p className="rubik-p5">{option.id}</p>
                 <input
                   type="checkbox"
                   className={"checkBox " + option.id}
-                  name={option.id}
                   value={option}
                   checked={selectedItems.includes(option)}
                   onChange={() => handleCheckboxChange(option)}
@@ -203,7 +204,7 @@ export const Prices = () => {
                     height: "25px",
                   }}
                 />
-                <label htmlFor={"checkbox-" + option.id}>{option.label}</label>
+                </label>
               </div>
             ))}
           </div>
@@ -212,20 +213,18 @@ export const Prices = () => {
 
       <div className="pricesDiv" style={{ gap: "2rem" }}>
         <p className="rubik-p5">
-          Para finalizar, elegi el medio de contacto que vos prefieras:
+          Hace click al boton para elegir el medio de comunicación:
         </p>
 
         <button
           onClick={() => selectMedio(medio)}
           id="medioButton"
-          style={{ backgroundColor: color,borderStyle:"none" }}
+          style={{ backgroundColor: color[0], borderStyle: "none",color:color[1] }}
         >
           <p
             className="rubik-p5"
-            style={{ fontWeight: "bold"}}
-            fontWeight="bold"
           >
-            {medio?"Whatsapp":"Email"}
+            {medio ? "Whatsapp" : "Email"}
           </p>
         </button>
 

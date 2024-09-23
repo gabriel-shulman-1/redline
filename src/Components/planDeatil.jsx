@@ -14,12 +14,12 @@ export const PlanDetail = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const Navigate = useNavigate();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const { Id } = useParams();
 
   const ShowData = () => {
-    const { Id } = useParams();
     ShowImg(currentIndex)
-    let tittle = { planesData }.planesData.plan[currentIndex].id;
-    let text = { planesData }.planesData.description[currentIndex].id;
+    let tittle = { planesData }.planesData.plan[Id].id;
+    let text = { planesData }.planesData.description[Id].id;
     return (
       <>
         <h1 className="rubik-h1">Plan {tittle}</h1>
@@ -28,7 +28,7 @@ export const PlanDetail = () => {
     );
   };
 
-  const ShowImg = (id) => {
+  const ShowImg = () => {
     useEffect(() => {
       let plan = [
         [i1, i2],
@@ -36,7 +36,7 @@ export const PlanDetail = () => {
         [i4, i3, i2, i1],
         [i5, i4, i3, i2, i1],
       ];
-      let index = plan[id]
+      let index = plan[currentIndex]
       const interval = setInterval(() => {
         setCurrentImageIndex((prevIndex) =>
           prevIndex === index.length - 1 ? 0 : prevIndex + 1
@@ -56,11 +56,15 @@ export const PlanDetail = () => {
   };
 
   const handleNext = () => {
-    let go = [1, 2, 3, 4];
+    let go = [2, 3, 4, 5];
     setCurrentIndex((prevIndex) =>
       prevIndex === go.length - 1 ? 0 : prevIndex + 1
     );
     Navigate("/PlanDetail/" + currentIndex.toString());
+  };
+
+  const goToServices = () => {
+    Navigate("/prices");
   };
 
   return (
@@ -75,7 +79,10 @@ export const PlanDetail = () => {
       </button>
 
       <div 
-      className={"descriptionContainer cont"+(currentIndex+1).toString()}>
+      className={"descriptionContainer cont"+(Id).toString()
+      }
+      onClick={()=>{goToServices()}}
+      >
         <div className="txDescription">
           <ShowData />
         </div>

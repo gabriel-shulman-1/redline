@@ -1,5 +1,5 @@
 import logo from "../assets/REDLINE PNG TRANSP 05.png";
-import "../styles/navBarB.css"
+import "../styles/navBarB.css";
 import instaLogo from "../assets/Instagram.png";
 import { NavLink } from "react-router-dom";
 import { WhatsAppLink } from "./wps";
@@ -12,7 +12,7 @@ export const NavBar = () => {
             <img src={logo} alt="Logo" width="250px" />
           </NavLink>
         </div>
-        
+
         <div className="social-icons">
           <WhatsAppLink
             phoneNumber="+5401155238433"
@@ -29,14 +29,14 @@ export const NavBar = () => {
       </div>
 
       <nav className="nav-bar">
-        <NavLink to={"/services"} className={"link"}>
-          <button className="nav-btn">
-            <p className="rubik-p5">Nuestros servicios</p>
-          </button>
-        </NavLink>
         <NavLink to={"/"} className={"link"}>
           <button className="nav-btn">
             <p className="rubik-p5">Nuestros planes</p>
+          </button>
+        </NavLink>
+        <NavLink to={"/services"} className={"link"}>
+          <button className="nav-btn">
+            <p className="rubik-p5">Nuestros servicios</p>
           </button>
         </NavLink>
         <NavLink to={"/prices"} className={"link"}>
