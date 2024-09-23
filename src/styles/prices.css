@@ -15,7 +15,7 @@
 }
 
 .pricesDiv {
-  height: 710px;
+  height: auto;
   width: 70%;
   margin: 50px auto;
   padding: 3rem;
@@ -30,11 +30,12 @@
 
 .areaCont {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   width: 100%;
   border-color: white;
+  gap: 1rem;
 }
 
 .pricesDiv textarea {

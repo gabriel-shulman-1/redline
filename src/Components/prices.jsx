@@ -4,12 +4,8 @@ import data from "../data/info.json";
 import "leaflet/dist/leaflet.css";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
-//import wps from "../assets/wps.svg";
-//import mail from "../assets/mail.svg";
 
 export const Prices = () => {
-  const [msn1, setMsn1] = useState("");
-  const [msn7, setMsn7] = useState("");
   const [medio, setMedio] = useState(false);
   const [method, setMethod] = useState("whatsapp");
   const [color, setColor] = useState("#9fff89");
@@ -83,7 +79,8 @@ export const Prices = () => {
       console.log(intro2);
       const emailUrl =
         "mailto:someone@example.com?subject=Nuevo cliente " +
-        { msn1 }.msn1 +
+        textareaValues.Nombre +
+        textareaValues.Apellido +
         "&body=" +
         intro +
         ". " +
@@ -117,9 +114,10 @@ export const Prices = () => {
     }
   };
 
+  //mover a estilos
   const style1 = {
     textAlign: "center",
-    width: "80%",
+    width: "60%",
     height: "auto",
     borderColor: "blue",
   };
@@ -128,20 +126,21 @@ export const Prices = () => {
     <main id="mainPrices">
       <h1 className="rubik-h1">Cotiza tu conexión</h1>
       <div className="pricesDiv">
-        {entradas.map((entrada, index) => (
-          <>
-            <label>
-              <p className="rubik-p5">{entrada}</p>
-            </label>
-            <textarea
-              key={index}
-              name={entrada}
-              value={textareaValues[entrada]}
-              style={style1}
-              onChange={(e) => handleTextareaChange(e, entrada)}
-            />
-          </>
-        ))}
+        <div className="areaCont">
+          {entradas.map((entrada, index) => (
+            <div key={index} style={style1}>
+              <label>
+                <p className="rubik-p5">{entrada}</p>
+              </label>
+              <textarea
+              style={{width:"80%"}}
+                name={entrada}
+                value={textareaValues[entrada]}
+                onChange={(e) => handleTextareaChange(e, entrada)}
+              />
+            </div>
+          ))}
+        </div>
         <h2
           className="rubik-h2"
           style={{ fontSize: "xx-large", padding: "1rem" }}
