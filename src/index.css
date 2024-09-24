@@ -20,6 +20,7 @@ header .top-bar {
   background-position: 50% 50%;
   background-size: cover;
   align-items: center;
+  flex-wrap: wrap;
 }
 header .top-bar .logo {
   align-items: center;

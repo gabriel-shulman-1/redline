@@ -64,7 +64,7 @@
 
 @media screen and (max-width: 500px) {
   #mainPrices {
-    padding: 0;
+    padding: 3rem 0 0 0; 
   }
   .areaCont {
     flex-direction: column;

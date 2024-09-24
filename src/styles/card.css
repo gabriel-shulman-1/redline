@@ -12,7 +12,7 @@
   color: white;
   text-align: center;
   height: 22rem;
-  width: 17%;
+  width: 15%;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -31,9 +31,20 @@
   height: 1px;
 }
 
-.c1:hover {
+.c0:hover {
   background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
   box-shadow: 0px 0px 18px 6px rgba(37, 113, 255, 0.747);
+}
+.c0:hover img {
+  animation: resize;
+  animation-duration: 1s;
+  width: 200px;
+  height: 200px;
+}
+
+.c1:hover {
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+  box-shadow: 0px 0px 18px 6px rgba(84, 212, 255, 0.747);
 }
 .c1:hover img {
   animation: resize;
@@ -43,8 +54,8 @@
 }
 
 .c2:hover {
-  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
-  box-shadow: 0px 0px 18px 6px rgba(84, 212, 255, 0.747);
+  background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);
+  box-shadow: 0px 0px 18px 6px rgba(221, 255, 30, 0.747);
 }
 .c2:hover img {
   animation: resize;
@@ -54,22 +65,11 @@
 }
 
 .c3:hover {
-  background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);
-  box-shadow: 0px 0px 18px 6px rgba(221, 255, 30, 0.747);
-}
-.c3:hover img {
-  animation: resize;
-  animation-duration: 1s;
-  width: 200px;
-  height: 200px;
-}
-
-.c4:hover {
   background-image: linear-gradient(to right, #434343 0%, black 100%);
   color: white;
   box-shadow: 0px 0px 18px 6px rgba(255, 23, 23, 0.747);
 }
-.c4:hover img {
+.c3:hover img {
   animation: resize;
   animation-duration: 1s;
   width: 200px;
@@ -87,30 +87,29 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1000px) {
   .card{
     margin: 2rem;
     width: 100%;
-    height: auto;
     padding: 0 0 2rem;
   }
 
-  .c1 {
+  .c0 {
     background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
     box-shadow: 0px 0px 18px 6px rgba(37, 113, 255, 0.747);
   }
   
-  .c2 {
+  .c1 {
     background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
     box-shadow: 0px 0px 18px 6px rgba(84, 212, 255, 0.747);
   }
   
-  .c3 {
+  .c2 {
     background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);
     box-shadow: 0px 0px 18px 6px rgba(221, 255, 30, 0.747);
   }
   
-  .c4 {
+  .c3 {
     background-image: linear-gradient(to right, #434343 0%, black 100%);
     color: white;
     box-shadow: 0px 0px 18px 6px rgba(255, 23, 23, 0.747);

@@ -8,8 +8,10 @@ import i2 from "../assets/iconos/camaraMain.svg";
 import i3 from "../assets/iconos/homeofficeMain.svg";
 import i4 from "../assets/iconos/pcgamerMain.svg";
 import i5 from "../assets/iconos/industriaMain.svg";
+import useResponsive from './useResponsive';
 
 export const PlanDetail = () => {
+  const { isMobile, isTablet, isDesktop } = useResponsive();
   const imagenDescription = [i1, i2, i3, i4, i5];
   const [currentIndex, setCurrentIndex] = useState(0);
   const Navigate = useNavigate();
@@ -86,7 +88,9 @@ export const PlanDetail = () => {
         <div className="txDescription">
           <ShowData />
         </div>
+        {isDesktop?
         <img src={imagenDescription[currentImageIndex]} alt={imagenDescription[currentImageIndex]} style={{width:"280px"}}/>
+    :""}
       </div>
       <button
         className="slider der"

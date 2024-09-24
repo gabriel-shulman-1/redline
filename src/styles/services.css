@@ -78,7 +78,7 @@
 @media screen and (max-width:500px){
   #services{
     height: max-content;
-    padding: inherit;
+    padding: 3rem 0 0 0;
   }
   #services .ntdiv{
     flex-direction: column;

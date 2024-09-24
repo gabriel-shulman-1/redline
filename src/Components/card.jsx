@@ -5,9 +5,11 @@ import i3 from "../assets/iconos/homeofficeMain.svg";
 import i4 from "../assets/iconos/pcgamerMain.svg";
 import i5 from "../assets/iconos/industriaMain.svg";
 import "../styles/card.css";
+import useResponsive from './useResponsive';
 import { useState, useEffect } from "react";
 
 export const Card = ({ tipo, pDescription, idx }) => {
+  const { isMobile, isTablet, isDesktop } = useResponsive();
   const imagenDescription = [i1, i2, i3, i4, i5];
   const [enter, setEnter] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -37,6 +39,11 @@ export const Card = ({ tipo, pDescription, idx }) => {
   let tittle = { tipo }.tipo.id;
   let description = { pDescription }.pDescription;
 
+  const tabletCard = {
+    width:"75%",
+    height:"auto"
+  }
+
 
   if (loading) return <div className="loading" style={{color:"transparent"}}>Loading...</div>
   
@@ -49,13 +56,14 @@ export const Card = ({ tipo, pDescription, idx }) => {
         onMouseEnter={() => setEnter(true)}
         onMouseLeave={() => setEnter(false)}
         className={"card c" + (idx).toString()}
+        style={!isDesktop?tabletCard:{}}
       >
         <h2 className="rubik-h3">{tittle}</h2>
-        {enter === true ? (
-          <img src={imagenDescription[currentImageIndex]} alt={imagenDescription[currentImageIndex]}/>
-        ) : (
-          ""
-        )}
+      {enter && isDesktop ? (
+        <img src={imagenDescription[currentImageIndex]} alt={imagenDescription[currentImageIndex]}/>
+      ) : (
+        ""
+      )}
         <p className="rubik-p5">{description}</p>
       </div>
     </>
