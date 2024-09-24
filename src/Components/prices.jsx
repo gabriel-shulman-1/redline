@@ -12,10 +12,6 @@ export const Prices = () => {
   const [selectedItems, setSelectedItems] = useState([]);
   const [errors, setErrors] = useState({});
   const Navigate = useNavigate();
-
-  //generador de textarea
-  //agregar control de blanco
-  //agregar control de datos(int,string,ect)
   const entradas = [
     "Nombre",
     "Apellido",
@@ -45,7 +41,6 @@ export const Prices = () => {
       [attribute]: "",
     }));
   };
-
   const validateFields = () => {
     const newErrors = {};
     entradas.forEach((entrada) => {
@@ -55,7 +50,6 @@ export const Prices = () => {
     });
     return newErrors;
   };
-
   const handleSend = () => {
     const newErrors = validateFields();
     if (Object.keys(newErrors).length > 0) {
@@ -76,9 +70,7 @@ export const Prices = () => {
         textareaValues.Altura +
         " .Detalles: " +
         textareaValues.Descripcion;
-
       let intro2 = " . Planes solicitados: ";
-
       for (
         let index = 0;
         index < { selectedItems }.selectedItems.length;
@@ -87,7 +79,6 @@ export const Prices = () => {
         intro2 =
           intro2 + { selectedItems }.selectedItems[index].id.toString() + " ";
       }
-
       if (method === "whatsapp") {
         const whatsappUrl = `https://wa.me/+5491126890280?text=${encodeURIComponent(
           intro + ". Planes solicitados: " + intro2
@@ -121,8 +112,6 @@ export const Prices = () => {
       }
     });
   };
-
-  //construir selector de forma de envio whatsapp/email
   const selectMedio = (opcion) => {
     setMedio(!medio);
     if (opcion) {
@@ -133,8 +122,6 @@ export const Prices = () => {
       setMethod("whatsapp");
     }
   };
-
-  //mover a estilos
   const style1 = {
     textAlign: "center",
     width: "60%",
@@ -142,7 +129,6 @@ export const Prices = () => {
     borderColor: "blue",
     margin: "1rem",
   };
-
   return (
     <main id="mainPrices">
       <h1 className="rubik-h1">Cotiza tu conexión</h1>
@@ -180,7 +166,6 @@ export const Prices = () => {
             </div>
           ))}
         </div>
-
         <div className="areaCont">
           <h2
             className="rubik-h2"
@@ -210,12 +195,10 @@ export const Prices = () => {
           </div>
         </div>
       </div>
-
       <div className="pricesDiv" style={{ gap: "2rem" }}>
         <p className="rubik-p5">
           Hace click al boton para elegir el medio de comunicación:
         </p>
-
         <button
           onClick={() => selectMedio(medio)}
           id="medioButton"
@@ -227,7 +210,6 @@ export const Prices = () => {
             {medio ? "Whatsapp" : "Email"}
           </p>
         </button>
-
         <button onClick={handleSend} className="nav-btn">
           Pedir presupuesto
         </button>

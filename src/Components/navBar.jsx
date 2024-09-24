@@ -6,9 +6,6 @@ import { WhatsAppLink } from "./wps";
 import useResponsive from "./useResponsive";
 export const NavBar = () => {
   const { isMobile } = useResponsive();
-  //console.log(isDesktop)
-  //console.log(isTablet)
-  //console.log(isMobile)
   return (
     <>
     {isMobile ? <nav className="nav-bar">

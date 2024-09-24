@@ -8,18 +8,16 @@ import i2 from "../assets/iconos/camaraMain.svg";
 import i3 from "../assets/iconos/homeofficeMain.svg";
 import i4 from "../assets/iconos/pcgamerMain.svg";
 import i5 from "../assets/iconos/industriaMain.svg";
-import useResponsive from './useResponsive';
-
+import useResponsive from "./useResponsive";
 export const PlanDetail = () => {
-  const { isDesktop } = useResponsive();
-  const imagenDescription = [i1, i2, i3, i4, i5];
-  const [currentIndex, setCurrentIndex] = useState(0);
   const Navigate = useNavigate();
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const { isDesktop } = useResponsive();
   const { Id } = useParams();
-
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const imagenDescription = [i1, i2, i3, i4, i5];
   const ShowData = () => {
-    ShowImg(currentIndex)
+    ShowImg(currentIndex);
     let tittle = { planesData }.planesData.plan[Id].id;
     let text = { planesData }.planesData.description[Id].id;
     return (
@@ -29,7 +27,6 @@ export const PlanDetail = () => {
       </>
     );
   };
-
   const ShowImg = () => {
     useEffect(() => {
       let plan = [
@@ -38,7 +35,7 @@ export const PlanDetail = () => {
         [i4, i3, i2, i1],
         [i5, i4, i3, i2, i1],
       ];
-      let index = plan[currentIndex]
+      let index = plan[currentIndex];
       const interval = setInterval(() => {
         setCurrentImageIndex((prevIndex) =>
           prevIndex === index.length - 1 ? 0 : prevIndex + 1
@@ -48,7 +45,6 @@ export const PlanDetail = () => {
       return () => clearInterval(interval);
     });
   };
-
   const handlePrev = () => {
     let back = [4, 3, 2, 1];
     setCurrentIndex((prevIndex) =>
@@ -56,7 +52,6 @@ export const PlanDetail = () => {
     );
     Navigate("/PlanDetail/" + currentIndex.toString());
   };
-
   const handleNext = () => {
     let go = [2, 3, 4, 5];
     setCurrentIndex((prevIndex) =>
@@ -64,11 +59,9 @@ export const PlanDetail = () => {
     );
     Navigate("/PlanDetail/" + currentIndex.toString());
   };
-
   const goToServices = () => {
     Navigate("/prices");
   };
-
   return (
     <main id="planDetail">
       <button
@@ -79,18 +72,24 @@ export const PlanDetail = () => {
       >
         <span>&#10094;</span>
       </button>
-
-      <div 
-      className={"descriptionContainer cont"+(Id).toString()
-      }
-      onClick={()=>{goToServices()}}
+      <div
+        className={"descriptionContainer cont" + Id.toString()}
+        onClick={() => {
+          goToServices();
+        }}
       >
         <div className="txDescription">
           <ShowData />
         </div>
-        {isDesktop?
-        <img src={imagenDescription[currentImageIndex]} alt={imagenDescription[currentImageIndex]} style={{width:"280px"}}/>
-    :""}
+        {isDesktop ? (
+          <img
+            src={imagenDescription[currentImageIndex]}
+            alt={imagenDescription[currentImageIndex]}
+            style={{ width: "280px" }}
+          />
+        ) : (
+          ""
+        )}
       </div>
       <button
         className="slider der"
