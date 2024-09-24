@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 export const Prices = () => {
   const [medio, setMedio] = useState(false);
   const [method, setMethod] = useState("whatsapp");
-  const [color, setColor] = useState("#9fff89");
+  const [color, setColor] = useState(["#ff0000","#ffffff"]);
   const [selectedItems, setSelectedItems] = useState([]);
   const [errors, setErrors] = useState({});
   const Navigate = useNavigate();

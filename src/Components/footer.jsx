@@ -1,7 +1,7 @@
 import logo from "../assets/REDLINE PNG TRANSP 09.png";
 import useResponsive from "./useResponsive";
 export const Footer = () => {
-  const { isMobile, isTablet, isDesktop } = useResponsive();
+  const { isDesktop } = useResponsive();
   const siPc = {
     display: "flex",
     flexDirection: "row",

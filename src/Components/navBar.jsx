@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import { WhatsAppLink } from "./wps";
 import useResponsive from "./useResponsive";
 export const NavBar = () => {
-  const { isMobile, isTablet, isDesktop } = useResponsive();
+  const { isMobile } = useResponsive();
   //console.log(isDesktop)
   //console.log(isTablet)
   //console.log(isMobile)

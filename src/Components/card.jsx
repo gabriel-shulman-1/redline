@@ -9,7 +9,7 @@ import useResponsive from './useResponsive';
 import { useState, useEffect } from "react";
 
 export const Card = ({ tipo, pDescription, idx }) => {
-  const { isMobile, isTablet, isDesktop } = useResponsive();
+  const { isDesktop } = useResponsive();
   const imagenDescription = [i1, i2, i3, i4, i5];
   const [enter, setEnter] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);

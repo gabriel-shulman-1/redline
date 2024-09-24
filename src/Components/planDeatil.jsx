@@ -11,7 +11,7 @@ import i5 from "../assets/iconos/industriaMain.svg";
 import useResponsive from './useResponsive';
 
 export const PlanDetail = () => {
-  const { isMobile, isTablet, isDesktop } = useResponsive();
+  const { isDesktop } = useResponsive();
   const imagenDescription = [i1, i2, i3, i4, i5];
   const [currentIndex, setCurrentIndex] = useState(0);
   const Navigate = useNavigate();

@@ -3,7 +3,7 @@ import { Card } from "./card";
 import "../styles/main.css";
 import useResponsive from './useResponsive';
 export const HomeMain = () => {
-  const { isMobile, isTablet, isDesktop } = useResponsive();
+  const { isDesktop } = useResponsive();
 
   const planDescription = [
     "Ideal para un hogar",
@@ -15,10 +15,6 @@ export const HomeMain = () => {
   const tablet = {
     width: "-webkit-fill-available",
     flexDirection: "column"
-  }
-  const tabletCard = {
-    width:"75%",
-    height:"auto"
   }
 
   return (
