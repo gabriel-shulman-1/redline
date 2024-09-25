@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import "../styles/prices.css";
 import data from "../data/info.json";
-import "leaflet/dist/leaflet.css";
-import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 
 export const Prices = () => {

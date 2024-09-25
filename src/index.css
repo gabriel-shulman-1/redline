@@ -1,13 +1,13 @@
 /*todo*/
 
-html,
-body {
+html,body {
   margin: 0;
   display: flex;
   flex-direction: column;
   font-family: Arial, Helvetica, sans-serif;
-  background-image: linear-gradient(to center, #2c2c2c 0%, black 100%, #505050 0%);
-}
+  /*background-image: linear-gradient(to center, #2c2c2c 0%, black 100%, #505050 0%);
+*/
+  }
 header {
   height: -webkit-fill-available;
 }
@@ -36,7 +36,7 @@ header .top-bar .social-icons {
   gap: 1.5rem;
 }
 
-/*iconos del header*/
+
 header .top-bar .social-icons a {
   transition: 1s;
   padding: 0.2rem;
@@ -47,18 +47,16 @@ header .top-bar .social-icons a img {
 }
 header .top-bar .social-icons a:nth-child(1):hover img {
   transition: 1s;
-  -webkit-box-shadow: 0px 0px 18px 6px rgba(0, 250, 0, 0.82);
-  -moz-box-shadow: 0px 0px 18px 6px rgba(0, 250, 0, 0.82);
-  box-shadow: 0px 0px 18px 6px rgba(0, 250, 0, 0.82);
+  -webkit-box-shadow: 0 0 18px 6px rgba(0, 250, 0, 0.82);
+  -moz-box-shadow: 0 0 18px 6px rgba(0, 250, 0, 0.82);
+  box-shadow: 0 0 18px 6px rgba(0, 250, 0, 0.82);
 }
 header .top-bar .social-icons a:nth-child(2):hover img {
   transition: 1s;
-  -webkit-box-shadow: 0px 0px 18px 6px rgba(229, 0, 250, 0.82);
-  -moz-box-shadow: 0px 0px 18px 6px rgba(229, 0, 250, 0.82);
-  box-shadow: 0px 0px 18px 6px rgba(229, 0, 250, 0.82);
+  -webkit-box-shadow: 0 0 18px 6px rgba(229, 0, 250, 0.82);
+  -moz-box-shadow: 0 0 18px 6px rgba(229, 0, 250, 0.82);
+  box-shadow: 0 0 18px 6px rgba(229, 0, 250, 0.82);
 }
-
-/*plandetail*/
 
 .descriptionContainer {
   width: 70%;
@@ -70,7 +68,7 @@ header .top-bar .social-icons a:nth-child(2):hover img {
   align-items: center;
   justify-content: space-around;
   border-radius: 10px;
-  box-shadow: 0px 0px 18px 6px rgba(255, 255, 255, 0.747);
+  box-shadow: 0 0 18px 6px rgba(255, 255, 255, 0.747);
 }
 
 .txDescription {
@@ -88,18 +86,17 @@ header .top-bar .social-icons a:nth-child(2):hover img {
   margin: auto;
   background-color: #818181;
   border-radius: 10px;
-  box-shadow: 0px 0px 8px 3px rgba(255, 255, 255, 0.747);
+  box-shadow: 0 0 8px 3px rgba(255, 255, 255, 0.747);
   border-style: none;
   transition: all 1s;
 }
 
 .slider:hover {
   background-color: #50c1d4;
-  box-shadow: 0px 0px 18px 6px rgba(255, 255, 255, 0.747);
+  box-shadow: 0 0 18px 6px rgba(255, 255, 255, 0.747);
   border-style: none;
 }
 
-/*footer*/
 footer {
   display: flex;
   flex-direction: row;
@@ -113,18 +110,15 @@ footer .divFooter li {
   list-style: none;
 }
 
-/*fonts*/
 
 .rubik-p6 {
   font-family: "Rubik", sans-serif;
-  font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
   font-size: medium;
 }
 .rubik-p5 {
   font-family: "Rubik", sans-serif;
-  font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
   font-size: medium;
@@ -134,7 +128,6 @@ footer .divFooter li {
 .rubik-h3 {
   text-align: center;
   font-family: "Rubik", sans-serif;
-  font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
   margin: 1rem;
@@ -145,14 +138,12 @@ footer .divFooter li {
   text-align: center;
   color: white;
   font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
 }
 
 .rubik-h1 {
   font-family: "Rubik", sans-serif;
-  font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
   margin: 2rem;
@@ -162,7 +153,6 @@ footer .divFooter li {
 
 .rubik-h2 {
   font-family: "Rubik", sans-serif;
-  font-optical-sizing: auto;
   font-weight: 500;
   margin: 2rem;
   color: white;
@@ -170,7 +160,6 @@ footer .divFooter li {
   text-align: center;
 }
 
-/*celus*/
 
 @media screen and (max-width: 500px) {
   header {
@@ -179,7 +168,6 @@ footer .divFooter li {
   header .top-bar {
     flex-direction: column;
     padding-top: 2rem;
-    height: max-content;
     background-position: 50% 40%;
     height: -webkit-fill-available;
     width: -webkit-fill-available;

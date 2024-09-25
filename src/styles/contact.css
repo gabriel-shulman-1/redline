@@ -25,7 +25,6 @@
   align-items: center;
   justify-content: space-evenly;
   margin: 1rem;
-  
 }
 
 .info-item .rubik-h2 {
@@ -61,36 +60,36 @@
   transition: all 1s;
 }
 
-.social-links img{
+.social-links img {
   width: 100px;
   position: relative;
   left: 40%;
   transition: all 1s;
 }
-.social-links a{
+.social-links a {
   color: transparent;
   right: 40%;
   transition: all 1s;
 }
-.social-links:hover img{
+.social-links:hover img {
   left: 0%;
   transition: all 1s;
 }
-.social-links:hover a{
+.social-links:hover a {
   color: white;
   right: 0%;
   transition: all 1s;
 }
 
-.social-links p{
+.social-links p {
   margin: 0 auto 0 auto;
 }
 
 @media screen and (max-width: 500px) {
-  #contact-container{
+  #contact-container {
     padding: 2rem 0;
   }
-  .contact-info iframe{
+  .contact-info iframe {
     margin: 0;
     width: -webkit-fill-available;
   }

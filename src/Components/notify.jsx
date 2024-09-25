@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import "../styles/notify.css";
+import style from "../styles/notify.css";
 export const Notify = () => {
   const { Name } = useParams();
   let nombre = { Name }.Name.toString();
@@ -14,8 +14,9 @@ export const Notify = () => {
     }, 1000);
     return () => clearInterval(intervalId);
   });
+
   return (
-    <main id="mainNotify">
+    <main>
       <h1 className="rubik-h1">¡gracias {nombre}!</h1>
       <h2 className="rubik-h2">
         Tu solicitud esta siendo estudiada para brindarte la mejor solución.

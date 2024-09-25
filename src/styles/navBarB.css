@@ -59,7 +59,7 @@ a .nav-btn {
   .nav-bar {
     padding: 0;
     width: 60px;
-    height:-webkit-fill-available;
+    height: -webkit-fill-available;
     position: fixed;
     z-index: 10;
     background: rgb(64, 236, 236);
@@ -82,10 +82,10 @@ a .nav-btn {
     z-index: 10;
     transition: all 1s ease-in-out;
   }
-  .nav-bar a{
+  .nav-bar a {
     text-decoration: none;
   }
-  
+
   .nav-bar:hover .nav-btn {
     display: block;
     margin: auto 0 auto;
@@ -95,23 +95,23 @@ a .nav-btn {
     opacity: 1;
   }
 
-  .nav-bar:hover a{
+  .nav-bar:hover a {
     text-decoration: none;
   }
 
   .rubik-p5 {
-    font-size:medium;
+    font-size: medium;
   }
 
   @keyframes fadeIn {
-    0%{
+    0% {
       opacity: 0;
     }
-    90%{
+    90% {
       opacity: 0;
     }
     100% {
-      opacity: 1; /* Aparecerá gradualmente */
+      opacity: 1;
     }
-}
+  }
 }
