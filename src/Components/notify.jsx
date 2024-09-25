@@ -13,7 +13,7 @@ export const Notify = () => {
       setTimeLeft(timeLeft - 1);
     }, 1000);
     return () => clearInterval(intervalId);
-  }, [timeLeft]);
+  });
   return (
     <main id="mainNotify">
       <h1 className="rubik-h1">¡gracias {nombre}!</h1>
