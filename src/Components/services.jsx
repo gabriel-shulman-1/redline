@@ -7,11 +7,9 @@ import foto5 from "../assets/fabricaService.jpg"
 import foto6 from "../assets/empresaService.jpg"
 import "../styles/services.css"
 export const Services = () =>{
-    
     return (
         <main id="services">
         <h1 className="rubik-h1">Nuestros servicios</h1>
-
         <div className="ntdiv">
             <div className="tx">
                 <h3 className="rubik-h3">A que nos dedicamos</h3>
@@ -26,7 +24,6 @@ export const Services = () =>{
                 <img className="ph" src={logo1} alt=""/>
             </div>
         </div>
-        
         <div className="ntdiv">
             <div className="tx">
                 <h3 className="rubik-h3">Hogares, Home Office, entretenimiento y vigilancia</h3>
@@ -39,7 +36,6 @@ export const Services = () =>{
                 <img src={foto3} alt="foto 4"/>
             </div> 
         </div>
-        
         <div className="ntdiv">
             <div className="tx">
                 <h3 className="rubik-h3">Planes para corporativos e instituciones</h3>

@@ -6,9 +6,7 @@ export const Contact = () => {
   return (
     <main id="contact-container">
       <h1 className="rubik-h1">Contacto</h1>
-
       <div className="contact-info">
-
         <div className="info-item">
           <div className="social-links">
           <img src={wpsLogo} alt={wpsLogo} />
@@ -17,7 +15,6 @@ export const Contact = () => {
             </p>
           </div>
         </div>
-
         <div className="info-item">
           <div className="social-links">
             <img src={mail} alt={mail} />
@@ -28,7 +25,6 @@ export const Contact = () => {
           </p>
           </div>
         </div>
-
         <div className="info-item">
           <div className="social-links">
             <img src={instagram} alt={instagram} />
@@ -44,7 +40,6 @@ export const Contact = () => {
           </div>
         </div>
       </div>
-
       <div className="contact-info">
         <h2 className="rubik-h2">Ubicación</h2>
         <iframe

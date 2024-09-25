@@ -20,7 +20,6 @@ export const Footer = () => {
         <img src={logo} alt={logo} style={{ width: "60px", height: "60px" }} />
         <h3 className="rubik-h3">RedLine internet</h3>
       </div>
-
       <div className="divFooter">
         <h3 className="rubik-h3">Contacto:</h3>
         <ul>

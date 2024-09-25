@@ -7,19 +7,13 @@ export const Notify = () => {
   let nombre = { Name }.Name.toString();
   const [timeLeft, setTimeLeft] = useState(6);
   const Navigate = useNavigate();
-
   useEffect(() => {
     if (timeLeft === 0) return Navigate("/");
-
-    // Configura el intervalo de 1 segundo
     const intervalId = setInterval(() => {
       setTimeLeft(timeLeft - 1);
     }, 1000);
-
-    // Limpia el intervalo al desmontar el componente
     return () => clearInterval(intervalId);
   }, [timeLeft]);
-
   return (
     <main id="mainNotify">
       <h1 className="rubik-h1">¡gracias {nombre}!</h1>
