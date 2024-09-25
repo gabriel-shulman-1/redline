@@ -127,8 +127,11 @@ export const Prices = () => {
     borderColor: "blue",
     margin: "1rem",
   };
+  const mystyle={
+    background: 'linear-gradient(to right, #2c2c2c, #000000, #505050)'
+  }
   return (
-    <main id="mainPrices">
+    <main id="mainPrices" style={mystyle}>
       <h1 className="rubik-h1">Cotiza tu conexión</h1>
       <div className="pricesDiv">
         <div className="areaCont">
